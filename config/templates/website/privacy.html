@@ -1,0 +1,203 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_title %}حریم خصوصی{% endblock %}
+{% block meta_description %}برای پیگیری سفارش، ارسال، پرداخت و حساب کاربری از راهنمای حریم خصوصی Hydrolalehzar استفاده
+کنید.{% endblock %}
+{% block body_class %}support-page{% endblock %}
+
+{% block content %}
+<!-- Page Title -->
+<div class="page-title light-background">
+  <div class="container d-lg-flex justify-content-between align-items-center">
+    <h1 class="mb-2 mb-lg-0">حریم خصوصی</h1>
+    <nav class="breadcrumbs">
+      <ol>
+        <li><a href="{% url 'website:index' %}">صفحه اصلی</a></li>
+        <li class="current">حریم خصوصی</li>
+      </ol>
+    </nav>
+  </div>
+</div><!-- End Page Title -->
+
+<!-- Privacy Section -->
+<section id="privacy" class="privacy section">
+
+  <div class="container" data-aos="fade-up">
+    <!-- Header -->
+    <div class="privacy-header" data-aos="fade-up">
+      <div class="header-content">
+        <span class="update-badge">آخرین به‌روزرسانی: ۲۷ فوریه ۲۰۲۵</span>
+        <h2>سیاست حریم خصوصی</h2>
+        <p>ما به حریم خصوصی شما احترام می‌گذاریم و از اطلاعات شخصی‌تان محافظت می‌کنیم. این سیاست نحوه استفاده ما از
+          اطلاعات شما را توضیح می‌دهد.</p>
+        <div class="privacy-badges">
+          <div class="badge-item">
+            <i class="bi bi-shield-check"></i>
+            <span>حفاظت از داده‌ها</span>
+          </div>
+          <div class="badge-item">
+            <i class="bi bi-lock"></i>
+            <span>ذخیره‌سازی امن</span>
+          </div>
+          <div class="badge-item">
+            <i class="bi bi-person-lock"></i>
+            <span>حریم خصوصی در اولویت</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Information Collection -->
+    <div class="info-section" data-aos="fade-up">
+      <div class="section-grid">
+        <div class="info-card">
+          <div class="card-header">
+            <i class="bi bi-collection"></i>
+            <h3>اطلاعاتی که جمع‌آوری می‌کنیم</h3>
+          </div>
+          <div class="card-content">
+            <ul class="info-list">
+              <li>نام و اطلاعات تماس</li>
+              <li>اطلاعات ورود به حساب</li>
+              <li>اطلاعات پرداخت</li>
+              <li>اطلاعات دستگاه</li>
+              <li>داده‌های استفاده و ترجیحات</li>
+              <li>سوابق مکاتبات</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="info-card">
+          <div class="card-header">
+            <i class="bi bi-graph-up"></i>
+            <h3>نحوه استفاده از داده‌ها</h3>
+          </div>
+          <div class="card-content">
+            <ul class="info-list">
+              <li>ارائه و بهبود خدمات</li>
+              <li>پردازش تراکنش‌ها</li>
+              <li>ارسال به‌روزرسانی‌ها و اعلان‌ها</li>
+              <li>شخصی‌سازی تجربه کاربری</li>
+              <li>تحلیل نحوه استفاده از خدمات</li>
+              <li>تأمین امنیت</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="info-card">
+          <div class="card-header">
+            <i class="bi bi-share"></i>
+            <h3>اشتراک‌گذاری اطلاعات</h3>
+          </div>
+          <div class="card-content">
+            <ul class="info-list">
+              <li>ارائه‌دهندگان خدمات</li>
+              <li>شرکای تجاری</li>
+              <li>الزامات قانونی</li>
+              <li>با رضایت کاربر</li>
+              <li>معاملات تجاری</li>
+              <li>شرکای تحلیل داده</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Security Measures -->
+    <div class="security-section" data-aos="fade-up">
+      <div class="section-header">
+        <h3>اقدامات امنیت داده</h3>
+        <p>برای حفاظت از داده‌های شما، اقدامات امنیتی متناسبی به کار می‌گیریم</p>
+      </div>
+      <div class="measures-grid">
+        <div class="measure-item">
+          <i class="bi bi-shield-lock"></i>
+          <h4>رمزنگاری</h4>
+          <p>همه داده‌ها هنگام انتقال و ذخیره‌سازی با پروتکل‌های استاندارد صنعت رمزنگاری می‌شوند</p>
+        </div>
+        <div class="measure-item">
+          <i class="bi bi-fingerprint"></i>
+          <h4>کنترل دسترسی</h4>
+          <p>کنترل دقیق دسترسی و روش‌های احراز هویت از اطلاعات شما محافظت می‌کنند</p>
+        </div>
+        <div class="measure-item">
+          <i class="bi bi-eye-slash"></i>
+          <h4>حریم خصوصی داده‌ها</h4>
+          <p>ارزیابی منظم حریم خصوصی و به‌کارگیری اصل کمینه‌سازی داده</p>
+        </div>
+        <div class="measure-item">
+          <i class="bi bi-patch-check"></i>
+          <h4>انطباق</h4>
+          <p>رعایت مقررات بین‌المللی حفاظت از داده</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- User Rights -->
+    <div class="rights-section" data-aos="fade-up">
+      <div class="rights-content">
+        <h3>حقوق حریم خصوصی شما</h3>
+        <p>در ارتباط با داده‌های شخصی خود از حقوق زیر برخوردارید:</p>
+        <div class="rights-grid">
+          <div class="right-item">
+            <i class="bi bi-eye"></i>
+            <h4>حق دسترسی</h4>
+            <p>می‌توانید نسخه‌ای از داده‌های شخصی خود را درخواست کنید</p>
+          </div>
+          <div class="right-item">
+            <i class="bi bi-pencil-square"></i>
+            <h4>حق اصلاح</h4>
+            <p>می‌توانید اطلاعات خود را به‌روزرسانی یا اصلاح کنید</p>
+          </div>
+          <div class="right-item">
+            <i class="bi bi-trash"></i>
+            <h4>حق حذف</h4>
+            <p>حذف داده‌های شخصی خود را درخواست کنید</p>
+          </div>
+          <div class="right-item">
+            <i class="bi bi-download"></i>
+            <h4>حق انتقال داده</h4>
+            <p>داده‌های خود را به خدمت دیگری منتقل کنید</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Additional Information -->
+    <div class="additional-info" data-aos="fade-up">
+      <div class="info-grid">
+        <div class="info-item">
+          <h4>سیاست کوکی‌ها</h4>
+          <p>برای بهبود تجربه مرور شما از کوکی‌ها استفاده می‌کنیم. تنظیمات کوکی را می‌توانید در مرورگر خود مدیریت کنید.
+          </p>
+        </div>
+        <div class="info-item">
+          <h4>حریم خصوصی کودکان</h4>
+          <p>خدمات ما برای کودکان زیر ۱۳ سال طراحی نشده است و آگاهانه اطلاعاتی از کودکان جمع‌آوری نمی‌کنیم.</p>
+        </div>
+        <div class="info-item">
+          <h4>به‌روزرسانی سیاست</h4>
+          <p>ممکن است این سیاست را به‌صورت دوره‌ای به‌روزرسانی کنیم و تغییرات مهم را اطلاع دهیم.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="privacy-contact" data-aos="fade-up">
+      <div class="contact-box">
+        <div class="contact-icon">
+          <i class="bi bi-envelope-open"></i>
+        </div>
+        <div class="contact-content">
+          <h4>پرسشی درباره حریم خصوصی دارید؟</h4>
+          <p>اگر درباره این سیاست پرسشی دارید، با مسئول حفاظت از داده‌های ما تماس بگیرید</p>
+          <a href="#" class="contact-button">تماس با مسئول حفاظت از داده‌ها</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</section><!-- /Privacy Section -->
+{% endblock content %}

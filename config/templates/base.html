@@ -1,0 +1,736 @@
+{% comment %} ==========================================================================
+   base.html — قالب پایه‌ی کل سایت
+   --------------------------------------------------------------------------
+   هر صفحه با  {% extends "base.html" %}  شروع می‌شود و فقط بلاک‌های زیر را پر می‌کند.
+   بلاک‌های اصلی:
+     page_title        عنوان صفحه (پسوند نام سایت خودکار اضافه می‌شود)
+     meta_description  توضیح متا (۱۲۰ تا ۱۶۰ نویسه)
+     robots            مثلاً  noindex, nofollow
+     canonical         کل تگ canonical (برای حذف، بلاک را خالی بگذارید)
+     og_type / og_image / og_title / og_description
+     extra_head / extra_css / extra_js / preload / schema
+     body_class        کلاس <body>
+     nav_home | nav_about | nav_category | nav_product | nav_blog | nav_contact
+                       برای فعال شدن آیتم منو:  {% block nav_about %} class="active" aria-current="page"{% endblock %}
+     header / content / footer / preloader / scroll_top
+   نیازمندی‌ها: context processor های  request  و  auth  (پیش‌فرض Django)
+   ========================================================================== {% endcomment %}
+{% load static %}
+{% with site_name="هیدرو لاله‌زار" site_name_en="Hydrolalehzar" site_phone="+989125202919" fonts_url="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Vazirmatn:wght@100..900&display=swap" %}
+<!DOCTYPE html>
+<html lang="{% block html_lang %}fa{% endblock %}" dir="rtl">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}{% block page_title %}{% endblock %} | {{ site_name }}{% endblock %}</title>
+  <meta name="description" content="{% block meta_description %}فروشگاه آنلاین {{ site_name_en }}؛ مجموعه‌ای متنوع از پوشاک، لوازم و محصولات منتخب را با پیشنهادهای ویژه ببینید.{% endblock %}">
+  <meta name="robots" content="{% block robots %}index, follow, max-image-preview:large{% endblock %}">
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:site_name" content="{{ site_name }}">
+  <meta property="og:locale" content="fa_IR">
+  <meta property="og:type" content="{% block og_type %}website{% endblock %}">
+  {% block og_title %}{% endblock %}
+  {% block og_description %}{% endblock %}
+  <meta name="twitter:card" content="summary_large_image">
+  {% if request %}{% with origin=request.scheme|add:"://"|add:request.get_host page_url=request.scheme|add:"://"|add:request.get_host|add:request.path %}
+  {% block canonical %}<link rel="canonical" href="{{ page_url }}">{% endblock %}
+  <meta property="og:url" content="{{ page_url }}">
+  {# تصویر پیش‌فرض اشتراک‌گذاری (۱۲۰۰×۶۳۰) را در static/assets/img/og-default.jpg قرار دهید #}
+  {% block og_image %}<meta property="og:image" content="{{ origin }}{% static 'assets/img/og-default.jpg' %}">{% endblock %}
+  {% endwith %}{% endif %}
+
+  <!-- Favicons -->
+  <link href="{% static 'assets/img/favicon.png' %}" rel="icon" type="image/png">
+  <link href="{% static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+  <!-- Performance: اتصال زودهنگام به منابع خارجی و بارگذاری غیرمسدودکننده‌ی فونت -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="{{ fonts_url }}" rel="preload" as="style">
+  <link href="{{ fonts_url }}" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="{{ fonts_url }}" rel="stylesheet"></noscript>
+  {% block preload %}{% endblock %}
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.rtl.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/drift-zoom/drift-basic.css' %}" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="{% static 'assets/css/main.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/css/rtl.css' %}" rel="stylesheet">
+  {% block extra_css %}{% endblock %}
+
+  <!-- Structured data -->
+  {% block schema %}{% if request %}{% with origin=request.scheme|add:"://"|add:request.get_host %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "{{ origin }}/#organization",
+        "name": "{{ site_name }}",
+        "alternateName": "{{ site_name_en }}",
+        "url": "{{ origin }}/",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "{{ site_phone }}",
+          "contactType": "customer service",
+          "availableLanguage": "fa"
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "{{ origin }}/#website",
+        "name": "{{ site_name }}",
+        "url": "{{ origin }}/",
+        "inLanguage": "fa-IR",
+        "publisher": { "@id": "{{ origin }}/#organization" }
+      }
+    ]
+  }
+  </script>
+  {% endwith %}{% endif %}{% endblock %}
+  {% block extra_head %}{% endblock %}
+</head>
+
+<body class="{% block body_class %}{% endblock %}">
+
+  <a class="visually-hidden-focusable" href="#main-content">پرش به محتوای اصلی</a>
+
+  {% block header %}
+<header id="header" class="header sticky-top">
+    <!-- Top Bar -->
+    <div class="top-bar py-2">
+      <div class="container-fluid container-xl">
+        <div class="row align-items-center">
+          <div class="col-lg-4 d-none d-lg-flex">
+            <div class="top-bar-item">
+              <i class="bi bi-telephone-fill me-2"></i>
+              <span>نیاز به راهنمایی دارید؟ تماس بگیرید: </span>
+              <a href="tel:09125202919"> 09125202919</a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-12 text-center">
+            <div class="announcement-slider swiper init-swiper">
+              <script type="application/json" class="swiper-config">
+                {
+                  "loop": true,
+                  "speed": 600,
+                  "autoplay": {
+                    "delay": 5000
+                  },
+                  "slidesPerView": 1,
+                  "direction": "vertical",
+                  "effect": "slide"
+                }
+              </script>
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">🚚 ارسال رایگان برای خریدهای بالای ۵۰ دلار</div>
+                <div class="swiper-slide">💰 ضمانت بازگشت وجه تا ۳۰ روز.</div>
+                <div class="swiper-slide">🎁 ۲۰٪ تخفیف برای نخستین خرید</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 d-none d-lg-block">
+            <div class="d-flex justify-content-end">
+              <div class="top-bar-item dropdown me-3">
+                <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown">
+                  <i class="bi bi-translate me-2"></i>فارسی
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#"><i class="bi bi-check2 me-2 selected-icon"></i>فارسی</a></li>
+                  <li><a class="dropdown-item" href="#">English</a></li>
+                </ul>
+              </div>
+              <div class="top-bar-item dropdown">
+                <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown">
+                  <i class="bi bi-currency-dollar me-2"></i>تومان
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#"><i class="bi bi-check2 me-2 selected-icon"></i>تومان</a></li>
+                  <li><a class="dropdown-item" href="#">یورو</a></li>
+                  <li><a class="dropdown-item" href="#">دلار آمریکا</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Header -->
+    <div class="main-header">
+      <div class="container-fluid container-xl">
+        <div class="d-flex py-3 align-items-center justify-content-between">
+
+          <!-- Logo -->
+          <a href="{% url 'website:index' %}" class="logo d-flex align-items-center">
+            <!-- Uncomment the line below if you also wish to use an image logo -->
+            <!-- <img src="{% static 'assets/img/logo.webp' %}" alt=""> -->
+            <h1 class="sitename">Hydrolalehzar</h1>
+          </a>
+
+          <!-- Search -->
+          <form class="search-form desktop-search-form" role="search" method="get">
+            <div class="input-group">
+              <input type="search" name="q" class="form-control" placeholder="جست‌وجوی محصولات" aria-label="جست‌وجوی محصولات" autocomplete="off">
+              <button class="btn" type="submit" aria-label="جست‌وجو">
+                <i class="bi bi-search"></i>
+              </button>
+            </div>
+          </form>
+
+          <!-- Actions -->
+          <div class="header-actions d-flex align-items-center justify-content-end">
+
+            <!-- Mobile Search Toggle -->
+            <button class="header-action-btn mobile-search-toggle d-xl-none" type="button" data-bs-toggle="collapse" data-bs-target="#mobileSearch" aria-expanded="false" aria-controls="mobileSearch" aria-label="جست‌وجو">
+              <i class="bi bi-search"></i>
+            </button>
+
+            <!-- Account -->
+            <div class="dropdown account-dropdown">
+              <button class="header-action-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="حساب کاربری">
+                <i class="bi bi-person"></i>
+              </button>
+              <div class="dropdown-menu">
+                <div class="dropdown-header">
+                  {% if user.is_authenticated %}
+                  <h6>{{ user.get_full_name|default:user.get_username }} عزیز، خوش آمدید</h6>
+                  <p class="mb-0">سفارش‌ها و اطلاعات حساب کاربری خود را مدیریت کنید</p>
+                  {% else %}
+                  <h6>به <span class="sitename">Hydrolalehzar</span> خوش آمدید</h6>
+                  <p class="mb-0">به حساب کاربری دسترسی پیدا کنید و سفارش‌ها را مدیریت کنید</p>
+                  {% endif %}
+                </div>
+                <div class="dropdown-body">
+                  <a class="dropdown-item d-flex align-items-center" href="{% url 'accounts:account' %}">
+                    <i class="bi bi-person-circle me-2"></i>
+                    <span>پروفایل من</span>
+                  </a>
+                </div>
+                {% if not user.is_authenticated %}
+                <div class="dropdown-footer">
+                  <a href="{% url 'accounts:login' %}" class="btn btn-primary w-100 mb-2">ورود</a>
+                  <a href="{% url 'accounts:register' %}" class="btn btn-outline-primary w-100">ثبت‌نام</a>
+                </div>
+                {% endif %}
+              </div>
+            </div>
+
+            <!-- Mobile Navigation Toggle -->
+            <i class="mobile-nav-toggle d-xl-none bi bi-list me-0" role="button" aria-label="باز و بسته کردن منو"></i>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="header-nav">
+      <div class="container-fluid container-xl position-relative">
+        <nav id="navmenu" class="navmenu" aria-label="منوی اصلی">
+          <ul>
+            <li><a href="{% url 'website:index' %}"{% block nav_home %}{% endblock %}>صفحه اصلی</a></li>
+            <li><a href="{% url 'website:about' %}"{% block nav_about %}{% endblock %}>درباره ما</a></li>
+            <li><a href="{% url 'catalog:catalog' %}"{% block nav_category %}{% endblock %}>دسته‌بندی</a></li>
+            <li><a href="{% url 'catalog:product-details' %}"{% block nav_product %}{% endblock %}>جزئیات محصول</a></li>
+            <li><a href="{% url 'blog:blog' %}"{% block nav_blog %}{% endblock %}>وبلاگ</a></li>
+            <li class="dropdown"><a href="#"><span>منوی کشویی</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+              <ul>
+                <li><a href="#">گزینه ۱</a></li>
+                <li class="dropdown"><a href="#"><span>زیرمنوی تو در تو</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                  <ul>
+                    <li><a href="#">زیرمنوی تو در تو ۱</a></li>
+                    <li><a href="#">زیرمنوی تو در تو ۲</a></li>
+                    <li><a href="#">زیرمنوی تو در تو ۳</a></li>
+                    <li><a href="#">زیرمنوی تو در تو ۴</a></li>
+                    <li><a href="#">زیرمنوی تو در تو ۵</a></li>
+                  </ul>
+                </li>
+                <li><a href="#">گزینه ۲</a></li>
+                <li><a href="#">گزینه ۳</a></li>
+                <li><a href="#">گزینه ۴</a></li>
+              </ul>
+            </li>
+
+            <!-- Products Mega Menu 2 -->
+            <li class="products-megamenu-2"><a href="#"><span>مگامنو ۲</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+
+              <!-- Products Mega Menu 2 Mobile View -->
+              <ul class="mobile-megamenu">
+
+                <li><a href="#">زنانه</a></li>
+                <li><a href="#">مردانه</a></li>
+                <li><a href="#">کودکان</a></li>
+
+                <li class="dropdown"><a href="#"><span>پوشاک</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                  <ul>
+                    <li><a href="#">پیراهن و تاپ</a></li>
+                    <li><a href="#">پالتو و لباس رویی</a></li>
+                    <li><a href="#">لباس زیر</a></li>
+                    <li><a href="#">سویشرت</a></li>
+                    <li><a href="#">پیراهن زنانه</a></li>
+                    <li><a href="#">لباس شنا</a></li>
+                  </ul>
+                </li>
+
+                <li class="dropdown"><a href="#"><span>کفش</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                  <ul>
+                    <li><a href="#">بوت</a></li>
+                    <li><a href="#">صندل</a></li>
+                    <li><a href="#">کفش پاشنه‌بلند</a></li>
+                    <li><a href="#">کفش کالج</a></li>
+                    <li><a href="#">دمپایی</a></li>
+                    <li><a href="#">کفش آکسفورد</a></li>
+                  </ul>
+                </li>
+
+                <li class="dropdown"><a href="#"><span>اکسسوری</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                  <ul>
+                    <li><a href="#">کیف دستی</a></li>
+                    <li><a href="#">عینک</a></li>
+                    <li><a href="#">کلاه</a></li>
+                    <li><a href="#">ساعت</a></li>
+                    <li><a href="#">زیورآلات</a></li>
+                    <li><a href="#">کمربند</a></li>
+                  </ul>
+                </li>
+
+                <li class="dropdown"><a href="#"><span>سایزهای خاص</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                  <ul>
+                    <li><a href="#">سایز بزرگ</a></li>
+                    <li><a href="#">سایز ریزنقش</a></li>
+                    <li><a href="#">کفش پنجه‌پهن</a></li>
+                    <li><a href="#">کفش پنجه‌باریک</a></li>
+                  </ul>
+                </li>
+
+              </ul><!-- End Products Mega Menu 2 Mobile View -->
+
+              <!-- Products Mega Menu 2 Desktop View -->
+              <div class="desktop-megamenu">
+
+                <div class="megamenu-tabs">
+                  <ul class="nav nav-tabs" role="tablist">
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link active" id="womens-tab" data-bs-toggle="tab" data-bs-target="#womens-content-1883" type="button" aria-selected="true" role="tab">زنانه</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link" id="mens-tab" data-bs-toggle="tab" data-bs-target="#mens-content-1883" type="button" aria-selected="false" tabindex="-1" role="tab">مردانه</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link" id="kids-tab" data-bs-toggle="tab" data-bs-target="#kids-content-1883" type="button" aria-selected="false" tabindex="-1" role="tab">کودک</button>
+                    </li>
+                  </ul>
+                </div>
+
+                <!-- Tabs Content -->
+                <div class="megamenu-content tab-content">
+
+                  <!-- Women Tab -->
+                  <div class="tab-pane fade show active" id="womens-content-1883" role="tabpanel" aria-labelledby="womens-tab">
+                    <div class="category-layout">
+                      <div class="categories-section">
+                        <div class="category-headers">
+                          <h4>پوشاک</h4>
+                          <h4>کفش</h4>
+                          <h4>اکسسوری</h4>
+                          <h4>سایزهای خاص</h4>
+                        </div>
+
+                        <div class="category-links">
+                          <div class="link-row">
+                            <a href="#">پیراهن و تاپ</a>
+                            <a href="#">بوت</a>
+                            <a href="#">کیف دستی</a>
+                            <a href="#">سایز بزرگ</a>
+                          </div>
+                          <div class="link-row">
+                            <a href="#">پالتو و لباس رویی</a>
+                            <a href="#">صندل</a>
+                            <a href="#">عینک</a>
+                            <a href="#">سایز ریزنقش</a>
+                          </div>
+                          <div class="link-row">
+                            <a href="#">لباس زیر</a>
+                            <a href="#">کفش پاشنه‌بلند</a>
+                            <a href="#">کلاه</a>
+                            <a href="#">کفش پنجه‌پهن</a>
+                          </div>
+                          <div class="link-row">
+                            <a href="#">سویشرت</a>
+                            <a href="#">کفش کالج</a>
+                            <a href="#">ساعت</a>
+                            <a href="#">کفش پنجه‌باریک</a>
+                          </div>
+                          <div class="link-row">
+                            <a href="#">پیراهن زنانه</a>
+                            <a href="#">دمپایی</a>
+                            <a href="#">زیورآلات</a>
+                            <a href="#"></a>
+                          </div>
+                          <div class="link-row">
+                            <a href="#">لباس شنا</a>
+                            <a href="#">کفش آکسفورد</a>
+                            <a href="#">کمربند</a>
+                            <a href="#"></a>
+                          </div>
+                          <div class="link-row">
+                            <a href="#">مشاهده همه</a>
+                            <a href="#">مشاهده همه</a>
+                            <a href="#">مشاهده همه</a>
+                            <a href="#"></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="featured-section">
+                        <div class="featured-image">
+                          <img src="{% static 'assets/img/person/person-1.webp' %}" alt="مجموعه کفش پاشنه‌بلند زنانه">
+                          <div class="featured-content">
+                            <h3>زنانه<br>کیف<br>مجموعه</h3>
+                            <a href="#" class="btn-shop">همین حالا خرید کنید</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Men Tab -->
+                  <div class="tab-pane fade" id="mens-content-1883" role="tabpanel" aria-labelledby="mens-tab">
+                    <div class="category-layout">
+                      <div class="categories-section">
+                        <div class="category-headers">
+                          <h4>پوشاک</h4>
+                          <h4>کفش</h4>
+                          <h4>اکسسوری</h4>
+                          <h4>سایزهای خاص</h4>
+                        </div>
+
+                        <div class="category-links">
+                          <div class="link-row">
+                            <a href="#">پیراهن و پولوشرت</a>
+                            <a href="#">کتانی</a>
+                            <a href="#">ساعت</a>
+                            <a href="#">سایز بزرگ</a>
+                          </div>
+                          <div class="link-row">
+                            <a href="#">کاپشن و پالتو</a>
+                            <a href="#">بوت</a>
+                            <a href="#">کمربند</a>
+                            <a href="#">فیت اسلیم</a>
+                          </div>
+                          <div class="link-row">
+                            <a href="#">لباس زیر</a>
+                            <a href="#">کفش کالج</a>
+                            <a href="#">کراوات</a>
+                            <a href="#">کفش پنجه‌پهن</a>
+                          </div>
+                          <div class="link-row">
+                            <a href="#">هودی</a>
+                            <a href="#">کفش رسمی</a>
+                            <a href="#">کیف پول</a>
+                            <a href="#">سایزهای بزرگ</a>
+                          </div>
+                          <div class="link-row">
+                            <a href="#">کت‌وشلوار</a>
+                            <a href="#">صندل</a>
+                            <a href="#">عینک آفتابی</a>
+                            <a href="#"></a>
+                          </div>
+                          <div class="link-row">
+                            <a href="#">لباس ورزشی</a>
+                            <a href="#">دمپایی</a>
+                            <a href="#">کلاه</a>
+                            <a href="#"></a>
+                          </div>
+                          <div class="link-row">
+                            <a href="#">مشاهده همه</a>
+                            <a href="#">مشاهده همه</a>
+                            <a href="#">مشاهده همه</a>
+                            <a href="#"></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="featured-section">
+                        <div class="featured-image">
+                          <img src="{% static 'assets/img/person/person-4.webp' %}" alt="مجموعه کفش مردانه">
+                          <div class="featured-content">
+                            <h3>مردانه<br>کفش<br>مجموعه</h3>
+                            <a href="#" class="btn-shop">همین حالا خرید کنید</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Kids Tab -->
+                  <div class="tab-pane fade" id="kids-content-1883" role="tabpanel" aria-labelledby="kids-tab">
+                    <div class="category-layout">
+                      <div class="categories-section">
+                        <div class="category-headers">
+                          <h4>پوشاک</h4>
+                          <h4>کفش</h4>
+                          <h4>اکسسوری</h4>
+                          <h4>بر اساس سن</h4>
+                        </div>
+
+                        <div class="category-links">
+                          <div class="link-row">
+                            <a href="#">تی‌شرت و تاپ</a>
+                            <a href="#">کتانی</a>
+                            <a href="#">کوله‌پشتی</a>
+                            <a href="#">نوزادان (۰ تا ۲۴ ماه)</a>
+                          </div>
+                          <div class="link-row">
+                            <a href="#">لباس رویی</a>
+                            <a href="#">بوت</a>
+                            <a href="#">کلاه</a>
+                            <a href="#">نوپایان (۲ تا ۴ سال)</a>
+                          </div>
+                          <div class="link-row">
+                            <a href="#">لباس خواب</a>
+                            <a href="#">صندل</a>
+                            <a href="#">جوراب</a>
+                            <a href="#">کودکان (۴ تا ۷ سال)</a>
+                          </div>
+                          <div class="link-row">
+                            <a href="#">سویشرت</a>
+                            <a href="#">دمپایی</a>
+                            <a href="#">دستکش</a>
+                            <a href="#">کودکان بزرگ‌تر (۸ تا ۱۴ سال)</a>
+                          </div>
+                          <div class="link-row">
+                            <a href="#">پیراهن زنانه</a>
+                            <a href="#">کفش مدرسه</a>
+                            <a href="#">شال و روسری</a>
+                            <a href="#"></a>
+                          </div>
+                          <div class="link-row">
+                            <a href="#">لباس شنا</a>
+                            <a href="#">کفش ورزشی</a>
+                            <a href="#">اکسسوری مو</a>
+                            <a href="#"></a>
+                          </div>
+                          <div class="link-row">
+                            <a href="#">مشاهده همه</a>
+                            <a href="#">مشاهده همه</a>
+                            <a href="#">مشاهده همه</a>
+                            <a href="#"></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="featured-section">
+                        <div class="featured-image">
+                          <img src="{% static 'assets/img/person/person-9.webp' %}" alt="تازه‌رسیده‌های کودک">
+                          <div class="featured-content">
+                            <h3>کودک<br>جدید<br>تازه‌رسیده‌ها</h3>
+                            <a href="#" class="btn-shop">همین حالا خرید کنید</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
+              </div><!-- End Products Mega Menu 2 Desktop View -->
+
+            </li><!-- End Products Mega Menu 2 -->
+
+            <li><a href="{% url 'website:contact' %}"{% block nav_contact %}{% endblock %}>تماس</a></li>
+
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Mobile Search Form -->
+    <div class="collapse" id="mobileSearch">
+      <div class="container">
+        <form class="search-form" role="search" method="get">
+          <div class="input-group">
+            <input type="search" name="q" class="form-control" placeholder="جست‌وجوی محصولات" aria-label="جست‌وجوی محصولات" autocomplete="off">
+            <button class="btn" type="submit" aria-label="جست‌وجو">
+              <i class="bi bi-search"></i>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+  </header>
+  {% endblock header %}
+
+  <main class="main" id="main-content">
+    {% block content %}{% endblock %}
+  </main>
+
+  {% block footer %}
+  <footer id="footer" class="footer dark-background">
+    <div class="footer-main">
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-4 col-md-6">
+            <div class="footer-widget footer-about">
+              <a href="{% url 'website:index' %}" class="logo">
+                <span class="sitename">Hydrolalehzar</span>
+              </a>
+              <p>در فروشگاه Hydrolalehzar تلاش می‌کنیم خریدی آسان و مطمئن فراهم کنیم. مجموعه ما با دقت انتخاب شده تا نیازهای روزمره شما را پاسخ دهد.</p>
+
+              <div class="social-links mt-4">
+                <h5>با ما در ارتباط باشید</h5>
+                <div class="social-icons">
+                  <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                  <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                  <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+                  <a href="#" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+                  <a href="#" aria-label="Pinterest"><i class="bi bi-pinterest"></i></a>
+                  <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-6 col-sm-6">
+            <div class="footer-widget">
+              <h4>فروشگاه</h4>
+              <ul class="footer-links">
+                <li><a href="{% url 'catalog:catalog' %}">تازه‌رسیده‌ها</a></li>
+                <li><a href="{% url 'catalog:catalog' %}">پرفروش‌ها</a></li>
+                <li><a href="{% url 'catalog:catalog' %}">پوشاک زنانه</a></li>
+                <li><a href="{% url 'catalog:catalog' %}">پوشاک مردانه</a></li>
+                <li><a href="{% url 'catalog:catalog' %}">اکسسوری</a></li>
+                <li><a href="{% url 'catalog:catalog' %}">حراج</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-6 col-sm-6">
+            <div class="footer-widget">
+              <h4>پشتیبانی</h4>
+              <ul class="footer-links">
+                <li><a href="{% url 'website:support' %}">مرکز راهنما</a></li>
+                <li><a href="{% url 'website:faq' %}">پرسش‌های متداول</a></li>
+                <li><a href="shiping-info.html">اطلاعات ارسال</a></li>
+                <li><a href="return-policy.html">بازگشت و تعویض کالا</a></li>
+                <li><a href="#">راهنمای سایز</a></li>
+                <li><a href="{% url 'website:contact' %}">تماس با ما</a></li>
+                <li><a href="{% url 'blog:blog' %}">وبلاگ</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="footer-widget">
+              <h4>اطلاعات تماس</h4>
+              <div class="footer-contact">
+                <div class="contact-item">
+                  <i class="bi bi-geo-alt"></i>
+                  <span>تهران، خیابان نمونه، پلاک ۱۲۳</span>
+                </div>
+                <div class="contact-item">
+                  <i class="bi bi-telephone"></i>
+                  <span>09125202919</span>
+                </div>
+                <div class="contact-item">
+                  <i class="bi bi-envelope"></i>
+                  <span>hello@example.com</span>
+                </div>
+                <div class="contact-item">
+                  <i class="bi bi-clock"></i>
+                  <span>شنبه تا چهارشنبه: ۹ تا ۱۸<br>پنجشنبه: ۹ تا ۱۴<br>جمعه: تعطیل</span>
+                </div>
+              </div>
+
+              <div class="app-buttons mt-4">
+                <a href="#" class="app-btn">
+                  <i class="bi bi-apple"></i>
+                  <span>اپ استور</span>
+                </a>
+                <a href="#" class="app-btn">
+                  <i class="bi bi-google-play"></i>
+                  <span>گوگل پلی</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <div class="row gy-3 align-items-center">
+          <div class="col-lg-6 col-md-12">
+            <div class="copyright">
+              <p>© <span>حق نشر</span> <strong class="sitename">Hydrolalehzar</strong>. تمامی حقوق محفوظ است.</p>
+            </div>
+            <div class="credits mt-1">
+              طراحی‌شده توسط <a href="https://amirhamidi.pythonanywhere.com/">Amir Hamidi</a>
+            </div>
+          </div>
+
+          <div class="col-lg-6 col-md-12">
+            <div class="d-flex flex-wrap justify-content-lg-end justify-content-center align-items-center gap-4">
+              <div class="payment-methods">
+                <div class="payment-icons">
+                  <i class="bi bi-credit-card" aria-label="کارت اعتباری"></i>
+                  <i class="bi bi-paypal" aria-label="پی‌پال"></i>
+                  <i class="bi bi-apple" aria-label="Apple Pay"></i>
+                  <i class="bi bi-google" aria-label="Google Pay"></i>
+                  <i class="bi bi-shop" aria-label="Shop Pay"></i>
+                  <i class="bi bi-cash" aria-label="پرداخت در محل"></i>
+                </div>
+              </div>
+
+              <div class="legal-links">
+                <a href="{% url 'website:tos' %}">شرایط استفاده</a>
+                <a href="{% url 'website:privacy' %}">حریم خصوصی</a>
+                <a href="{% url 'website:tos' %}">کوکی‌ها</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+  {% endblock footer %}
+
+  {% block scroll_top %}
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center" aria-label="رفتن به بالای صفحه"><i class="bi bi-arrow-up-short"></i></a>
+  {% endblock %}
+
+  {% block preloader %}
+  <!-- Preloader -->
+  <div id="preloader"></div>
+  {% endblock %}
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
+  <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/drift-zoom/Drift.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/purecounter/purecounter_vanilla.js' %}"></script>
+
+  <!-- Main JS File -->
+  <script src="{% static 'assets/js/main.js' %}"></script>
+  {% block extra_js %}{% endblock %}
+
+</body>
+
+</html>
+{% endwith %}

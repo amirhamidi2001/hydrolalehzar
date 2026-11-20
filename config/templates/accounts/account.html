@@ -1,0 +1,1019 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_title %}حساب کاربری{% endblock %}
+{% block meta_description %}سفارش‌ها، نشانی‌ها و تنظیمات حساب کاربری خود را در Hydrolalehzar مدیریت کنید.{% endblock %}
+{% block robots %}noindex, nofollow{% endblock %}
+{% block body_class %}account-page{% endblock %}
+
+{% block content %}
+    <!-- Page Title -->
+    <div class="page-title light-background">
+      <div class="container d-lg-flex justify-content-between align-items-center">
+        <h1 class="mb-2 mb-lg-0">حساب کاربری</h1>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="{% url 'website:index' %}">صفحه اصلی</a></li>
+            <li class="current">حساب کاربری</li>
+          </ol>
+        </nav>
+      </div>
+    </div><!-- End Page Title -->
+
+    <!-- Account Section -->
+    <section id="account" class="account section">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <!-- Mobile Menu Toggle -->
+        <div class="mobile-menu d-lg-none mb-4">
+          <button class="mobile-menu-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#profileMenu">
+            <i class="bi bi-grid"></i>
+            <span>منو</span>
+          </button>
+        </div>
+
+        <div class="row g-4">
+          <!-- Profile Menu -->
+          <div class="col-lg-3">
+            <div class="profile-menu collapse d-lg-block" id="profileMenu">
+              <!-- User Info -->
+              <div class="user-info" data-aos="fade-right">
+                <div class="user-avatar">
+                  <img src="{% static 'assets/img/person/person-1.webp' %}" alt="پروفایل" loading="lazy">
+                  <span class="status-badge"><i class="bi bi-shield-check"></i></span>
+                </div>
+                <h4>سارا اندرسون</h4>
+                <div class="user-status">
+                  <i class="bi bi-award"></i>
+                  <span>عضو ویژه</span>
+                </div>
+              </div>
+
+              <!-- Navigation Menu -->
+              <nav class="menu-nav">
+                <ul class="nav flex-column" role="tablist">
+                  <li class="nav-item">
+                    <a class="nav-link active" data-bs-toggle="tab" href="#orders">
+                      <i class="bi bi-box-seam"></i>
+                      <span>سفارش‌های من</span>
+                      <span class="badge">3</span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" data-bs-toggle="tab" href="#wishlist">
+                      <i class="bi bi-heart"></i>
+                      <span>علاقه‌مندی‌ها</span>
+                      <span class="badge">12</span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" data-bs-toggle="tab" href="#wallet">
+                      <i class="bi bi-wallet2"></i>
+                      <span>روش‌های پرداخت</span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" data-bs-toggle="tab" href="#reviews">
+                      <i class="bi bi-star"></i>
+                      <span>دیدگاه‌های من</span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" data-bs-toggle="tab" href="#addresses">
+                      <i class="bi bi-geo-alt"></i>
+                      <span>نشانی‌ها</span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" data-bs-toggle="tab" href="#settings">
+                      <i class="bi bi-gear"></i>
+                      <span>تنظیمات حساب</span>
+                    </a>
+                  </li>
+                </ul>
+
+                <div class="menu-footer">
+                  <a href="#" class="help-link">
+                    <i class="bi bi-question-circle"></i>
+                    <span>مرکز راهنما</span>
+                  </a>
+                  <a href="#" class="logout-link">
+                    <i class="bi bi-box-arrow-right"></i>
+                    <span>خروج</span>
+                  </a>
+                </div>
+              </nav>
+            </div>
+          </div>
+
+          <!-- Content Area -->
+          <div class="col-lg-9">
+            <div class="content-area">
+              <div class="tab-content">
+                <!-- Orders Tab -->
+                <div class="tab-pane fade show active" id="orders">
+                  <div class="section-header" data-aos="fade-up">
+                    <h2>سفارش‌های من</h2>
+                    <div class="header-actions">
+                      <div class="search-box">
+                        <i class="bi bi-search"></i>
+                        <input type="text" placeholder="جست‌وجوی سفارش‌ها...">
+                      </div>
+                      <div class="dropdown">
+                        <button class="filter-btn" data-bs-toggle="dropdown">
+                          <i class="bi bi-funnel"></i>
+                          <span>فیلتر</span>
+                        </button>
+                        <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="#">همه سفارش‌ها</a></li>
+                          <li><a class="dropdown-item" href="#">در حال پردازش</a></li>
+                          <li><a class="dropdown-item" href="#">ارسال‌شده</a></li>
+                          <li><a class="dropdown-item" href="#">تحویل‌شده</a></li>
+                          <li><a class="dropdown-item" href="#">لغوشده</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="orders-grid">
+                    <!-- Order Card 1 -->
+                    <div class="order-card" data-aos="fade-up" data-aos-delay="100">
+                      <div class="order-header">
+                        <div class="order-id">
+                          <span class="label">شناسه سفارش:</span>
+                          <span class="value">سفارش شماره ORD-2024-1278</span>
+                        </div>
+                        <div class="order-date">۲۰ فوریه ۲۰۲۵</div>
+                      </div>
+                      <div class="order-content">
+                        <div class="product-grid">
+                          <img src="{% static 'assets/img/person/person-1.webp' %}" alt="محصول" loading="lazy">
+                          <img src="{% static 'assets/img/person/person-2.webp' %}" alt="محصول" loading="lazy">
+                          <img src="{% static 'assets/img/person/person-3.webp' %}" alt="محصول" loading="lazy">
+                        </div>
+                        <div class="order-info">
+                          <div class="info-row">
+                            <span>وضعیت</span>
+                            <span class="status processing">در حال پردازش</span>
+                          </div>
+                          <div class="info-row">
+                            <span>کالاها</span>
+                            <span>۳ کالا</span>
+                          </div>
+                          <div class="info-row">
+                            <span>مجموع</span>
+                            <span class="price">$789.99</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="order-footer">
+                        <button type="button" class="btn-track" data-bs-toggle="collapse" data-bs-target="#tracking1" aria-expanded="false">پیگیری سفارش</button>
+                        <button type="button" class="btn-details" data-bs-toggle="collapse" data-bs-target="#details1" aria-expanded="false">مشاهده جزئیات</button>
+                      </div>
+
+                      <!-- Order Tracking -->
+                      <div class="collapse tracking-info" id="tracking1">
+                        <div class="tracking-timeline">
+                          <div class="timeline-item completed">
+                            <div class="timeline-icon">
+                              <i class="bi bi-check-circle-fill"></i>
+                            </div>
+                            <div class="timeline-content">
+                              <h5>سفارش تأیید شد</h5>
+                              <p>سفارش شما دریافت و تأیید شده است</p>
+                              <span class="timeline-date">۲۰ فوریه ۲۰۲۵ - ساعت ۱۰:۳۰</span>
+                            </div>
+                          </div>
+
+                          <div class="timeline-item completed">
+                            <div class="timeline-icon">
+                              <i class="bi bi-check-circle-fill"></i>
+                            </div>
+                            <div class="timeline-content">
+                              <h5>در حال پردازش</h5>
+                              <p>سفارش شما برای ارسال آماده می‌شود</p>
+                              <span class="timeline-date">۲۰ فوریه ۲۰۲۵ - ساعت ۱۴:۴۵</span>
+                            </div>
+                          </div>
+
+                          <div class="timeline-item active">
+                            <div class="timeline-icon">
+                              <i class="bi bi-box-seam"></i>
+                            </div>
+                            <div class="timeline-content">
+                              <h5>بسته‌بندی</h5>
+                              <p>کالاهای شما برای ارسال بسته‌بندی می‌شوند</p>
+                              <span class="timeline-date">۲۰ فوریه ۲۰۲۵ - ساعت ۱۶:۱۵</span>
+                            </div>
+                          </div>
+
+                          <div class="timeline-item">
+                            <div class="timeline-icon">
+                              <i class="bi bi-truck"></i>
+                            </div>
+                            <div class="timeline-content">
+                              <h5>در مسیر ارسال</h5>
+                              <p>انتظار می‌رود طی ۲۴ ساعت ارسال شود</p>
+                            </div>
+                          </div>
+
+                          <div class="timeline-item">
+                            <div class="timeline-icon">
+                              <i class="bi bi-house-door"></i>
+                            </div>
+                            <div class="timeline-content">
+                              <h5>تحویل</h5>
+                              <p>زمان تقریبی تحویل: ۲۲ فوریه ۲۰۲۵</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Order Details -->
+                      <div class="collapse order-details" id="details1">
+                        <div class="details-content">
+                          <div class="detail-section">
+                            <h5>اطلاعات سفارش</h5>
+                            <div class="info-grid">
+                              <div class="info-item">
+                                <span class="label">روش پرداخت</span>
+                                <span class="value">کارت بانکی (**** ۴۵۸۹)</span>
+                              </div>
+                              <div class="info-item">
+                                <span class="label">روش ارسال</span>
+                                <span class="value">ارسال فوری (۲ تا ۳ روز)</span>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="detail-section">
+                            <h5>اقلام (۳)</h5>
+                            <div class="order-items">
+                              <div class="item">
+                                <img src="{% static 'assets/img/person/person-1.webp' %}" alt="محصول" loading="lazy">
+                                <div class="item-info">
+                                  <h6>محصول نمونه</h6>
+                                  <div class="item-meta">
+                                    <span class="sku">شناسه کالا: PRD-001</span>
+                                    <span class="qty">تعداد: ۱</span>
+                                  </div>
+                                </div>
+                                <div class="item-price">$899.99</div>
+                              </div>
+
+                              <div class="item">
+                                <img src="{% static 'assets/img/person/person-2.webp' %}" alt="محصول" loading="lazy">
+                                <div class="item-info">
+                                  <h6>با انتخابی متنوع از محصولات ما همراه شوید</h6>
+                                  <div class="item-meta">
+                                    <span class="sku">شناسه کالا: PRD-002</span>
+                                    <span class="qty">تعداد: ۲</span>
+                                  </div>
+                                </div>
+                                <div class="item-price">$599.95</div>
+                              </div>
+
+                              <div class="item">
+                                <img src="{% static 'assets/img/person/person-3.webp' %}" alt="محصول" loading="lazy">
+                                <div class="item-info">
+                                  <h6>محصول منتخب</h6>
+                                  <div class="item-meta">
+                                    <span class="sku">شناسه کالا: PRD-003</span>
+                                    <span class="qty">تعداد: ۱</span>
+                                  </div>
+                                </div>
+                                <div class="item-price">$129.99</div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="detail-section">
+                            <h5>جزئیات قیمت</h5>
+                            <div class="price-breakdown">
+                              <div class="price-row">
+                                <span>جمع جزء</span>
+                                <span>$1,929.93</span>
+                              </div>
+                              <div class="price-row">
+                                <span>هزینه ارسال</span>
+                                <span>$15.99</span>
+                              </div>
+                              <div class="price-row">
+                                <span>مالیات</span>
+                                <span>$159.98</span>
+                              </div>
+                              <div class="price-row total">
+                                <span>مجموع</span>
+                                <span>$2,105.90</span>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="detail-section">
+                            <h5>نشانی ارسال</h5>
+                            <div class="address-info">
+                              <p>سارا اندرسون<br>خیابان نمونه، پلاک ۱۲۳<br>واحد ۴<br>تهران، کدپستی ۱۰۰۰۰۰۰۰۰۰<br>ایالات متحده</p>
+                              <p class="contact">09125202919</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Order Card 2 -->
+                    <div class="order-card" data-aos="fade-up" data-aos-delay="200">
+                      <div class="order-header">
+                        <div class="order-id">
+                          <span class="label">شناسه سفارش:</span>
+                          <span class="value">سفارش شماره ORD-2024-1265</span>
+                        </div>
+                        <div class="order-date">۱۵ فوریه ۲۰۲۵</div>
+                      </div>
+                      <div class="order-content">
+                        <div class="product-grid">
+                          <img src="{% static 'assets/img/person/person-4.webp' %}" alt="محصول" loading="lazy">
+                          <img src="{% static 'assets/img/person/person-5.webp' %}" alt="محصول" loading="lazy">
+                        </div>
+                        <div class="order-info">
+                          <div class="info-row">
+                            <span>وضعیت</span>
+                            <span class="status shipped">ارسال‌شده</span>
+                          </div>
+                          <div class="info-row">
+                            <span>کالاها</span>
+                            <span>۲ کالا</span>
+                          </div>
+                          <div class="info-row">
+                            <span>مجموع</span>
+                            <span class="price">$459.99</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="order-footer">
+                        <button type="button" class="btn-track" data-bs-toggle="collapse" data-bs-target="#tracking2" aria-expanded="false">پیگیری سفارش</button>
+                        <button type="button" class="btn-details" data-bs-toggle="collapse" data-bs-target="#details2" aria-expanded="false">مشاهده جزئیات</button>
+                      </div>
+
+                      <!-- Order Tracking -->
+                      <div class="collapse tracking-info" id="tracking2">
+                        <div class="tracking-timeline">
+                          <div class="timeline-item completed">
+                            <div class="timeline-icon">
+                              <i class="bi bi-check-circle-fill"></i>
+                            </div>
+                            <div class="timeline-content">
+                              <h5>سفارش تأیید شد</h5>
+                              <p>سفارش شما دریافت و تأیید شده است</p>
+                              <span class="timeline-date">۱۵ فوریه ۲۰۲۵ - ساعت ۹:۱۵</span>
+                            </div>
+                          </div>
+
+                          <div class="timeline-item completed">
+                            <div class="timeline-icon">
+                              <i class="bi bi-check-circle-fill"></i>
+                            </div>
+                            <div class="timeline-content">
+                              <h5>در حال پردازش</h5>
+                              <p>سفارش شما برای ارسال آماده می‌شود</p>
+                              <span class="timeline-date">۱۵ فوریه ۲۰۲۵ - ساعت ۱۱:۳۰</span>
+                            </div>
+                          </div>
+
+                          <div class="timeline-item completed">
+                            <div class="timeline-icon">
+                              <i class="bi bi-check-circle-fill"></i>
+                            </div>
+                            <div class="timeline-content">
+                              <h5>بسته‌بندی</h5>
+                              <p>کالاهای شما بسته‌بندی و آماده ارسال شده‌اند</p>
+                              <span class="timeline-date">۱۵ فوریه ۲۰۲۵ - ساعت ۱۴:۴۵</span>
+                            </div>
+                          </div>
+
+                          <div class="timeline-item active">
+                            <div class="timeline-icon">
+                              <i class="bi bi-truck"></i>
+                            </div>
+                            <div class="timeline-content">
+                              <h5>در مسیر ارسال</h5>
+                              <p>بسته در مسیر ارسال قرار دارد</p>
+                              <span class="timeline-date">۱۶ فوریه ۲۰۲۵ - ساعت ۱۰:۲۰</span>
+                              <div class="shipping-info">
+                                <span>شماره رهگیری: </span>
+                                <span class="tracking-number">1Z999AA1234567890</span>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="timeline-item">
+                            <div class="timeline-icon">
+                              <i class="bi bi-house-door"></i>
+                            </div>
+                            <div class="timeline-content">
+                              <h5>تحویل</h5>
+                              <p>زمان تقریبی تحویل: ۱۸ فوریه ۲۰۲۵</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Order Details -->
+                      <div class="collapse order-details" id="details2">
+                        <div class="details-content">
+                          <div class="detail-section">
+                            <h5>اطلاعات سفارش</h5>
+                            <div class="info-grid">
+                              <div class="info-item">
+                                <span class="label">روش پرداخت</span>
+                                <span class="value">کارت بانکی (**** ۷۸۲۱)</span>
+                              </div>
+                              <div class="info-item">
+                                <span class="label">روش ارسال</span>
+                                <span class="value">ارسال استاندارد (۳ تا ۵ روز)</span>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="detail-section">
+                            <h5>اقلام (۲)</h5>
+                            <div class="order-items">
+                              <div class="item">
+                                <img src="{% static 'assets/img/person/person-4.webp' %}" alt="محصول" loading="lazy">
+                                <div class="item-info">
+                                  <h6>محصول نمونه</h6>
+                                  <div class="item-meta">
+                                    <span class="sku">شناسه کالا: PRD-004</span>
+                                    <span class="qty">تعداد: ۱</span>
+                                  </div>
+                                </div>
+                                <div class="item-price">$299.99</div>
+                              </div>
+
+                              <div class="item">
+                                <img src="{% static 'assets/img/person/person-5.webp' %}" alt="محصول" loading="lazy">
+                                <div class="item-info">
+                                  <h6>محصول نمونه</h6>
+                                  <div class="item-meta">
+                                    <span class="sku">شناسه کالا: PRD-005</span>
+                                    <span class="qty">تعداد: ۱</span>
+                                  </div>
+                                </div>
+                                <div class="item-price">$159.99</div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="detail-section">
+                            <h5>جزئیات قیمت</h5>
+                            <div class="price-breakdown">
+                              <div class="price-row">
+                                <span>جمع جزء</span>
+                                <span>$459.98</span>
+                              </div>
+                              <div class="price-row">
+                                <span>هزینه ارسال</span>
+                                <span>$9.99</span>
+                              </div>
+                              <div class="price-row">
+                                <span>مالیات</span>
+                                <span>$38.02</span>
+                              </div>
+                              <div class="price-row total">
+                                <span>مجموع</span>
+                                <span>$459.99</span>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="detail-section">
+                            <h5>نشانی ارسال</h5>
+                            <div class="address-info">
+                              <p>سارا اندرسون<br>خیابان نمونه، پلاک ۱۲۳<br>واحد ۴<br>تهران، کدپستی ۱۰۰۰۰۰۰۰۰۰<br>ایالات متحده</p>
+                              <p class="contact">09125202919</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Order Card 3 -->
+                    <div class="order-card" data-aos="fade-up" data-aos-delay="300">
+                      <div class="order-header">
+                        <div class="order-id">
+                          <span class="label">شناسه سفارش:</span>
+                          <span class="value">سفارش شماره ORD-2024-1252</span>
+                        </div>
+                        <div class="order-date">۱۰ فوریه ۲۰۲۵</div>
+                      </div>
+                      <div class="order-content">
+                        <div class="product-grid">
+                          <img src="{% static 'assets/img/person/person-6.webp' %}" alt="محصول" loading="lazy">
+                        </div>
+                        <div class="order-info">
+                          <div class="info-row">
+                            <span>وضعیت</span>
+                            <span class="status delivered">تحویل‌شده</span>
+                          </div>
+                          <div class="info-row">
+                            <span>کالاها</span>
+                            <span>۱ کالا</span>
+                          </div>
+                          <div class="info-row">
+                            <span>مجموع</span>
+                            <span class="price">$129.99</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="order-footer">
+                        <button type="button" class="btn-review">ثبت دیدگاه</button>
+                        <button type="button" class="btn-details">مشاهده جزئیات</button>
+                      </div>
+                    </div>
+
+                    <!-- Order Card 4 -->
+                    <div class="order-card" data-aos="fade-up" data-aos-delay="400">
+                      <div class="order-header">
+                        <div class="order-id">
+                          <span class="label">شناسه سفارش:</span>
+                          <span class="value">سفارش شماره ORD-2024-1245</span>
+                        </div>
+                        <div class="order-date">۵ فوریه ۲۰۲۵</div>
+                      </div>
+                      <div class="order-content">
+                        <div class="product-grid">
+                          <img src="{% static 'assets/img/person/person-7.webp' %}" alt="محصول" loading="lazy">
+                          <img src="{% static 'assets/img/person/person-8.webp' %}" alt="محصول" loading="lazy">
+                          <img src="{% static 'assets/img/person/person-9.webp' %}" alt="محصول" loading="lazy">
+                          <span class="more-items">+2</span>
+                        </div>
+                        <div class="order-info">
+                          <div class="info-row">
+                            <span>وضعیت</span>
+                            <span class="status cancelled">لغوشده</span>
+                          </div>
+                          <div class="info-row">
+                            <span>کالاها</span>
+                            <span>۵ کالا</span>
+                          </div>
+                          <div class="info-row">
+                            <span>مجموع</span>
+                            <span class="price">$1,299.99</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="order-footer">
+                        <button type="button" class="btn-reorder">سفارش دوباره</button>
+                        <button type="button" class="btn-details">مشاهده جزئیات</button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Pagination -->
+                  <div class="pagination-wrapper" data-aos="fade-up">
+                    <button type="button" class="btn-prev" disabled="">
+                      <i class="bi bi-chevron-left"></i>
+                    </button>
+                    <div class="page-numbers">
+                      <button type="button" class="active">1</button>
+                      <button type="button">2</button>
+                      <button type="button">3</button>
+                      <span>...</span>
+                      <button type="button">12</button>
+                    </div>
+                    <button type="button" class="btn-next">
+                      <i class="bi bi-chevron-right"></i>
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Wishlist Tab -->
+                <div class="tab-pane fade" id="wishlist">
+                  <div class="section-header" data-aos="fade-up">
+                    <h2>علاقه‌مندی‌های من</h2>
+                    <div class="header-actions">
+                      <button type="button" class="btn-add-all">افزودن همه به سبد</button>
+                    </div>
+                  </div>
+
+                  <div class="wishlist-grid">
+                    <!-- Wishlist Item 1 -->
+                    <div class="wishlist-card" data-aos="fade-up" data-aos-delay="100">
+                      <div class="wishlist-image">
+                        <img src="{% static 'assets/img/person/person-1.webp' %}" alt="محصول" loading="lazy">
+                        <button class="btn-remove" type="button" aria-label="حذف از فهرست علاقه‌مندی‌ها">
+                          <i class="bi bi-trash"></i>
+                        </button>
+                        <div class="sale-badge">-20%</div>
+                      </div>
+                      <div class="wishlist-content">
+                        <h4>محصول نمونه</h4>
+                        <div class="product-meta">
+                          <div class="rating">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-half"></i>
+                            <span>(4.5)</span>
+                          </div>
+                          <div class="price">
+                            <span class="current">$79.99</span>
+                            <span class="original">$99.99</span>
+                          </div>
+                        </div>
+                        <button type="button" class="btn-add-cart">افزودن به سبد خرید</button>
+                      </div>
+                    </div>
+
+                    <!-- Wishlist Item 2 -->
+                    <div class="wishlist-card" data-aos="fade-up" data-aos-delay="200">
+                      <div class="wishlist-image">
+                        <img src="{% static 'assets/img/person/person-2.webp' %}" alt="محصول" loading="lazy">
+                        <button class="btn-remove" type="button" aria-label="حذف از فهرست علاقه‌مندی‌ها">
+                          <i class="bi bi-trash"></i>
+                        </button>
+                      </div>
+                      <div class="wishlist-content">
+                        <h4>با انتخابی متنوع از محصولات ما همراه شوید</h4>
+                        <div class="product-meta">
+                          <div class="rating">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star"></i>
+                            <span>(4.0)</span>
+                          </div>
+                          <div class="price">
+                            <span class="current">$149.99</span>
+                          </div>
+                        </div>
+                        <button type="button" class="btn-add-cart">افزودن به سبد خرید</button>
+                      </div>
+                    </div>
+
+                    <!-- Wishlist Item 3 -->
+                    <div class="wishlist-card" data-aos="fade-up" data-aos-delay="300">
+                      <div class="wishlist-image">
+                        <img src="{% static 'assets/img/person/person-3.webp' %}" alt="محصول" loading="lazy">
+                        <button class="btn-remove" type="button" aria-label="حذف از فهرست علاقه‌مندی‌ها">
+                          <i class="bi bi-trash"></i>
+                        </button>
+                        <div class="out-of-stock-badge">ناموجود</div>
+                      </div>
+                      <div class="wishlist-content">
+                        <h4>محصول منتخب</h4>
+                        <div class="product-meta">
+                          <div class="rating">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <span>(5.0)</span>
+                          </div>
+                          <div class="price">
+                            <span class="current">$199.99</span>
+                          </div>
+                        </div>
+                        <button type="button" class="btn-notify">هنگام موجودشدن اطلاع بده</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Payment Methods Tab -->
+                <div class="tab-pane fade" id="wallet">
+                  <div class="section-header" data-aos="fade-up">
+                    <h2>روش‌های پرداخت</h2>
+                    <div class="header-actions">
+                      <button type="button" class="btn-add-new">
+                        <i class="bi bi-plus-lg"></i>
+                        افزودن کارت جدید
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="payment-cards-grid">
+                    <!-- Payment Card 1 -->
+                    <div class="payment-card default" data-aos="fade-up" data-aos-delay="100">
+                      <div class="card-header">
+                        <i class="bi bi-credit-card"></i>
+                        <div class="card-badges">
+                          <span class="default-badge">پیش‌فرض</span>
+                          <span class="card-type">ویزا</span>
+                        </div>
+                      </div>
+                      <div class="card-body">
+                        <div class="card-number">•••• •••• •••• 4589</div>
+                        <div class="card-info">
+                          <span>انقضا ۰۹/۲۰۲۶</span>
+                        </div>
+                      </div>
+                      <div class="card-actions">
+                        <button type="button" class="btn-edit">
+                          <i class="bi bi-pencil"></i>
+                          ویرایش
+                        </button>
+                        <button type="button" class="btn-remove">
+                          <i class="bi bi-trash"></i>
+                          حذف
+                        </button>
+                      </div>
+                    </div>
+
+                    <!-- Payment Card 2 -->
+                    <div class="payment-card" data-aos="fade-up" data-aos-delay="200">
+                      <div class="card-header">
+                        <i class="bi bi-credit-card"></i>
+                        <div class="card-badges">
+                          <span class="card-type">مسترکارت</span>
+                        </div>
+                      </div>
+                      <div class="card-body">
+                        <div class="card-number">•••• •••• •••• 7821</div>
+                        <div class="card-info">
+                          <span>انقضا ۰۵/۲۰۲۵</span>
+                        </div>
+                      </div>
+                      <div class="card-actions">
+                        <button type="button" class="btn-edit">
+                          <i class="bi bi-pencil"></i>
+                          ویرایش
+                        </button>
+                        <button type="button" class="btn-remove">
+                          <i class="bi bi-trash"></i>
+                          حذف
+                        </button>
+                        <button type="button" class="btn-make-default">تنظیم به‌عنوان پیش‌فرض</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Reviews Tab -->
+                <div class="tab-pane fade" id="reviews">
+                  <div class="section-header" data-aos="fade-up">
+                    <h2>دیدگاه‌های من</h2>
+                    <div class="header-actions">
+                      <div class="dropdown">
+                        <button class="filter-btn" data-bs-toggle="dropdown">
+                          <i class="bi bi-funnel"></i>
+                          <span>مرتب‌سازی: جدیدترین</span>
+                        </button>
+                        <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="#">جدیدترین</a></li>
+                          <li><a class="dropdown-item" href="#">بالاترین امتیاز</a></li>
+                          <li><a class="dropdown-item" href="#">پایین‌ترین امتیاز</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="reviews-grid">
+                    <!-- Review Card 1 -->
+                    <div class="review-card" data-aos="fade-up" data-aos-delay="100">
+                      <div class="review-header">
+                        <img src="{% static 'assets/img/person/person-1.webp' %}" alt="محصول" class="product-image" loading="lazy">
+                        <div class="review-meta">
+                          <h4>محصول نمونه</h4>
+                          <div class="rating">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <span>(5.0)</span>
+                          </div>
+                          <div class="review-date">ثبت دیدگاه در ۱۵ فوریه ۲۰۲۵</div>
+                        </div>
+                      </div>
+                      <div class="review-content">
+                        <p>این محصول کیفیت خوبی دارد و مطابق توضیحات بود. از خریدم راضی هستم.</p>
+                      </div>
+                      <div class="review-footer">
+                        <button type="button" class="btn-edit">ویرایش دیدگاه</button>
+                        <button type="button" class="btn-delete">حذف</button>
+                      </div>
+                    </div>
+
+                    <!-- Review Card 2 -->
+                    <div class="review-card" data-aos="fade-up" data-aos-delay="200">
+                      <div class="review-header">
+                        <img src="{% static 'assets/img/person/person-2.webp' %}" alt="محصول" class="product-image" loading="lazy">
+                        <div class="review-meta">
+                          <h4>با انتخابی متنوع از محصولات ما همراه شوید</h4>
+                          <div class="rating">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star"></i>
+                            <span>(4.0)</span>
+                          </div>
+                          <div class="review-date">ثبت دیدگاه در ۱۰ فوریه ۲۰۲۵</div>
+                        </div>
+                      </div>
+                      <div class="review-content">
+                        <p>محصول را به‌موقع دریافت کردم و از کیفیت آن رضایت دارم.</p>
+                      </div>
+                      <div class="review-footer">
+                        <button type="button" class="btn-edit">ویرایش دیدگاه</button>
+                        <button type="button" class="btn-delete">حذف</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Addresses Tab -->
+                <div class="tab-pane fade" id="addresses">
+                  <div class="section-header" data-aos="fade-up">
+                    <h2>نشانی‌های من</h2>
+                    <div class="header-actions">
+                      <button type="button" class="btn-add-new">
+                        <i class="bi bi-plus-lg"></i>
+                        افزودن نشانی جدید
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="addresses-grid">
+                    <!-- Address Card 1 -->
+                    <div class="address-card default" data-aos="fade-up" data-aos-delay="100">
+                      <div class="card-header">
+                        <h4>صفحه اصلی</h4>
+                        <span class="default-badge">پیش‌فرض</span>
+                      </div>
+                      <div class="card-body">
+                        <p class="address-text">خیابان نمونه، پلاک ۱۲۳<br>واحد ۴<br>تهران، کدپستی ۱۰۰۰۰۰۰۰۰۰<br>ایالات متحده</p>
+                        <div class="contact-info">
+                          <div><i class="bi bi-person"></i> سارا اندرسون</div>
+                          <div><i class="bi bi-telephone"></i> 09125202919</div>
+                        </div>
+                      </div>
+                      <div class="card-actions">
+                        <button type="button" class="btn-edit">
+                          <i class="bi bi-pencil"></i>
+                          ویرایش
+                        </button>
+                        <button type="button" class="btn-remove">
+                          <i class="bi bi-trash"></i>
+                          حذف
+                        </button>
+                      </div>
+                    </div>
+
+                    <!-- Address Card 2 -->
+                    <div class="address-card" data-aos="fade-up" data-aos-delay="200">
+                      <div class="card-header">
+                        <h4>محل کار</h4>
+                      </div>
+                      <div class="card-body">
+                        <p class="address-text">خیابان کسب‌وکار، پلاک ۴۵۶<br>واحد ۲۰۰<br>سان‌فرانسیسکو، کالیفرنیا ۹۴۱۰۷<br>ایالات متحده</p>
+                        <div class="contact-info">
+                          <div><i class="bi bi-person"></i> سارا اندرسون</div>
+                          <div><i class="bi bi-telephone"></i> +1 (555) 987-6543</div>
+                        </div>
+                      </div>
+                      <div class="card-actions">
+                        <button type="button" class="btn-edit">
+                          <i class="bi bi-pencil"></i>
+                          ویرایش
+                        </button>
+                        <button type="button" class="btn-remove">
+                          <i class="bi bi-trash"></i>
+                          حذف
+                        </button>
+                        <button type="button" class="btn-make-default">تنظیم به‌عنوان پیش‌فرض</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Settings Tab -->
+                <div class="tab-pane fade" id="settings">
+                  <div class="section-header" data-aos="fade-up">
+                    <h2>تنظیمات حساب</h2>
+                  </div>
+
+                  <div class="settings-content">
+                    <!-- Personal Information -->
+                    <div class="settings-section" data-aos="fade-up">
+                      <h3>اطلاعات شخصی</h3>
+                      <form class="php-email-form settings-form">
+                        <div class="row g-3">
+                          <div class="col-md-6">
+                            <label for="firstName" class="form-label">نام</label>
+                            <input type="text" class="form-control" id="firstName" value="Sarah" required="">
+                          </div>
+                          <div class="col-md-6">
+                            <label for="lastName" class="form-label">نام خانوادگی</label>
+                            <input type="text" class="form-control" id="lastName" value="Anderson" required="">
+                          </div>
+                          <div class="col-md-6">
+                            <label for="email" class="form-label">ایمیل</label>
+                            <input type="email" class="form-control" id="email" value="sarah@example.com" required="">
+                          </div>
+                          <div class="col-md-6">
+                            <label for="phone" class="form-label">تلفن</label>
+                            <input type="tel" class="form-control" id="phone" value="09125202919">
+                          </div>
+                        </div>
+
+                        <div class="form-buttons">
+                          <button type="submit" class="btn-save">ذخیره تغییرات</button>
+                        </div>
+
+                        <div class="loading">در حال بارگذاری</div>
+                        <div class="error-message"></div>
+                        <div class="sent-message">تغییرات شما با موفقیت ذخیره شد!</div>
+                      </form>
+                    </div>
+
+                    <!-- Email Preferences -->
+                    <div class="settings-section" data-aos="fade-up" data-aos-delay="100">
+                      <h3>تنظیمات ایمیل</h3>
+                      <div class="preferences-list">
+                        <div class="preference-item">
+                          <div class="preference-info">
+                            <h4>به‌روزرسانی‌های سفارش</h4>
+                            <p>درباره وضعیت سفارش اعلان دریافت کنید</p>
+                          </div>
+                          <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="orderUpdates" checked="">
+                          </div>
+                        </div>
+
+                        <div class="preference-item">
+                          <div class="preference-info">
+                            <h4>پیشنهادهای ویژه</h4>
+                            <p>درباره پیشنهادها و تخفیف‌های جدید ایمیل دریافت کنید</p>
+                          </div>
+                          <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="promotions">
+                          </div>
+                        </div>
+
+                        <div class="preference-item">
+                          <div class="preference-info">
+                            <h4>خبرنامه</h4>
+                            <p>در خبرنامه هفتگی ما عضو شوید</p>
+                          </div>
+                          <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="newsletter" checked="">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Security Settings -->
+                    <div class="settings-section" data-aos="fade-up" data-aos-delay="200">
+                      <h3>امنیت</h3>
+                      <form class="php-email-form settings-form">
+                        <div class="row g-3">
+                          <div class="col-md-12">
+                            <label for="currentPassword" class="form-label">گذرواژه فعلی</label>
+                            <input type="password" class="form-control" id="currentPassword" required="">
+                          </div>
+                          <div class="col-md-6">
+                            <label for="newPassword" class="form-label">گذرواژه جدید</label>
+                            <input type="password" class="form-control" id="newPassword" required="">
+                          </div>
+                          <div class="col-md-6">
+                            <label for="confirmPassword" class="form-label">تکرار گذرواژه</label>
+                            <input type="password" class="form-control" id="confirmPassword" required="">
+                          </div>
+                        </div>
+
+                        <div class="form-buttons">
+                          <button type="submit" class="btn-save">به‌روزرسانی گذرواژه</button>
+                        </div>
+
+                        <div class="loading">در حال بارگذاری</div>
+                        <div class="error-message"></div>
+                        <div class="sent-message">گذرواژه شما با موفقیت به‌روزرسانی شد!</div>
+                      </form>
+                    </div>
+
+                    <!-- Delete Account -->
+                    <div class="settings-section danger-zone" data-aos="fade-up" data-aos-delay="300">
+                      <h3>حذف حساب</h3>
+                      <div class="danger-zone-content">
+                        <p>پس از حذف حساب، امکان بازگردانی آن وجود ندارد. پیش از ادامه مطمئن شوید.</p>
+                        <button type="button" class="btn-danger">حذف حساب</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section><!-- /Account Section -->
+
+  
+{% endblock content %}

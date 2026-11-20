@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_title %}پرسش‌های متداول{% endblock %}
+{% block meta_description %}پاسخ پرسش‌های متداول درباره سفارش، ارسال، پرداخت و خدمات فروشگاه Hydrolalehzar.{% endblock %}
+{% block body_class %}faq-page{% endblock %}
+
+{% block content %}
+    <!-- Page Title -->
+    <div class="page-title light-background">
+      <div class="container d-lg-flex justify-content-between align-items-center">
+        <h1 class="mb-2 mb-lg-0">پرسش‌های متداول</h1>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="{% url 'website:index' %}">صفحه اصلی</a></li>
+            <li class="current">پرسش‌های متداول</li>
+          </ol>
+        </nav>
+      </div>
+    </div><!-- End Page Title -->
+
+    <!-- Faq Section -->
+    <section id="faq" class="faq section">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4 justify-content-between">
+          <div class="col-lg-8">
+
+            <div class="faq-list">
+              <div class="faq-item faq-active" data-aos="fade-up" data-aos-delay="100">
+                <h3>چطور سفارش خود را پیگیری کنم؟</h3>
+                <div class="faq-content">
+                  <p>
+                    برای پیگیری سفارش، شماره سفارش را در بخش پیگیری وارد کنید. اگر به راهنمایی بیشتری نیاز دارید با پشتیبانی تماس بگیرید.
+                  </p>
+                </div>
+                <i class="bi bi-plus faq-toggle"></i>
+              </div><!-- End FAQ Item-->
+
+              <div class="faq-item" data-aos="fade-up" data-aos-delay="200">
+                <h3>چطور می‌توانم با پشتیبانی تماس بگیرم؟</h3>
+                <div class="faq-content">
+                  <p>
+                    از طریق تلفن، ایمیل یا گفت‌وگوی آنلاین با تیم پشتیبانی در تماس باشید.
+                  </p>
+                </div>
+                <i class="bi bi-plus faq-toggle"></i>
+              </div><!-- End FAQ Item-->
+
+              <div class="faq-item" data-aos="fade-up" data-aos-delay="300">
+                <h3>چه روش‌های پرداختی پذیرفته می‌شود؟</h3>
+                <div class="faq-content">
+                  <p>
+                    روش‌های پرداخت موجود در مرحله تسویه‌حساب نمایش داده می‌شوند.
+                  </p>
+                </div>
+                <i class="bi bi-plus faq-toggle"></i>
+              </div><!-- End FAQ Item-->
+
+              <div class="faq-item" data-aos="fade-up" data-aos-delay="400">
+                <h3>چطور کالایی را مرجوع کنم؟</h3>
+                <div class="faq-content">
+                  <p>
+                    برای آغاز فرایند بازگشت، وارد حساب خود شوید و کالای موردنظر را انتخاب کنید.
+                  </p>
+                </div>
+                <i class="bi bi-plus faq-toggle"></i>
+              </div><!-- End FAQ Item-->
+
+              <div class="faq-item" data-aos="fade-up" data-aos-delay="500">
+                <h3>چطور اطلاعات حسابم را تغییر دهم؟</h3>
+                <div class="faq-content">
+                  <p>
+                    از بخش حساب کاربری می‌توانید اطلاعات پروفایل خود را مشاهده و ویرایش کنید.
+                  </p>
+                </div>
+                <i class="bi bi-plus faq-toggle"></i>
+              </div><!-- End FAQ Item-->
+
+            </div>
+
+          </div>
+
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="faq-card">
+              <i class="bi bi-chat-dots-fill"></i>
+              <h3>پاسخ پرسشتان را پیدا نکردید؟</h3>
+              <p>اگر پاسخ پرسش خود را پیدا نکردید، با تیم پشتیبانی تماس بگیرید. همکاران ما برای راهنمایی درباره سفارش، خدمات و خرید در دسترس هستند.</p>
+              <a href="#" class="btn btn-primary">تماس با ما</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section><!-- /Faq Section -->
+
+  
+{% endblock content %}

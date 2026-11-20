@@ -1,0 +1,738 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}{{ site_name }} | فروشگاه آنلاین پوشاک، لوازم و محصولات منتخب{% endblock %}
+{% block meta_description %}فروشگاه آنلاین Hydrolalehzar؛ مجموعه‌ای متنوع از پوشاک، لوازم و محصولات منتخب را با پیشنهادهای ویژه ببینید.{% endblock %}
+{% block body_class %}index-page{% endblock %}
+{% block nav_home %} class="active" aria-current="page"{% endblock %}
+
+{% block content %}
+    <!-- Hero Section -->
+    <section id="hero" class="hero section">
+
+      <div class="hero-container">
+        <div class="hero-content">
+          <div class="content-wrapper" data-aos="fade-up" data-aos-delay="100">
+            <h1 class="hero-title">محصولات شگفت‌انگیز را کشف کنید</h1>
+            <p class="hero-description">مجموعه‌ای از محصولات باکیفیت را برای سبک زندگی بهتر ببینید. از مد تا فناوری، هرآنچه نیاز دارید با پیشنهادهای ویژه و ارسال سریع در دسترس شماست.</p>
+            <div class="hero-actions" data-aos="fade-up" data-aos-delay="200">
+              <a href="#products" class="btn-primary">همین حالا خرید کنید</a>
+              <a href="#categories" class="btn-secondary">مرور دسته‌بندی‌ها</a>
+            </div>
+            <div class="features-list" data-aos="fade-up" data-aos-delay="300">
+              <div class="feature-item">
+                <i class="bi bi-truck"></i>
+                <span>ارسال رایگان</span>
+              </div>
+              <div class="feature-item">
+                <i class="bi bi-award"></i>
+                <span>ضمانت کیفیت</span>
+              </div>
+              <div class="feature-item">
+                <i class="bi bi-headset"></i>
+                <span>پشتیبانی شبانه‌روزی</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visuals">
+          <div class="product-showcase" data-aos="fade-left" data-aos-delay="200">
+            <div class="product-card featured">
+              <img src="{% static 'assets/img/person/person-2.webp' %}" alt="محصول منتخب" class="img-fluid">
+              <div class="product-badge">پرفروش</div>
+              <div class="product-info">
+                <h4>هدفون بی‌سیم پریمیوم</h4>
+                <div class="price">
+                  <span class="sale-price">$299</span>
+                  <span class="original-price">$399</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-grid">
+              <div class="product-mini" data-aos="zoom-in" data-aos-delay="400">
+                <img src="{% static 'assets/img/person/person-3.webp' %}" alt="محصول" class="img-fluid">
+                <span class="mini-price">$89</span>
+              </div>
+              <div class="product-mini" data-aos="zoom-in" data-aos-delay="500">
+                <img src="{% static 'assets/img/person/person-5.webp' %}" alt="محصول" class="img-fluid">
+                <span class="mini-price">$149</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="floating-elements">
+            <div class="floating-icon cart" data-aos="fade-up" data-aos-delay="600">
+              <i class="bi bi-cart3"></i>
+              <span class="notification-dot">3</span>
+            </div>
+            <div class="floating-icon wishlist" data-aos="fade-up" data-aos-delay="700">
+              <i class="bi bi-heart"></i>
+            </div>
+            <div class="floating-icon search" data-aos="fade-up" data-aos-delay="800">
+              <i class="bi bi-search"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section><!-- /Hero Section -->
+
+    <!-- Promo Cards Section -->
+    <section id="promo-cards" class="promo-cards section">
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row gy-4">
+
+          <div class="col-lg-6">
+            <div class="category-featured d-flex flex-row-reverse" data-aos="fade-right" data-aos-delay="200">
+              <div class="category-image">
+                <img src="{% static 'assets/img/person/person-2.webp' %}" alt="مجموعه زنانه" class="img-fluid">
+              </div>
+              <div class="category-content">
+                <span class="category-tag">شیر برقی</span>
+                <h2>فستو</h2>
+                <p>تازه‌ترین محصولات ما را برای سبک زندگی امروز ببینید؛ پوشاکی شیک، راحت و پایدار برای هر موقعیت.</p>
+                <a href="#" class="btn-shop"> مشاهده مجموعه <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+
+            <div class="row gy-4">
+
+              <div class="col-xl-6">
+                <div class="category-card cat-men d-flex flex-row-reverse" data-aos="fade-up" data-aos-delay="300">
+                  <div class="category-image">
+                    <img src="{% static 'assets/img/person/person-5.webp' %}" alt="مد مردانه" class="img-fluid">
+                  </div>
+                  <div class="category-content">
+                    <h4>پوشاک مردانه</h4>
+                    <p>۲۴۲ محصول</p>
+                    <a href="#" class="card-link">همین حالا خرید کنید <i class="bi bi-arrow-right"></i></a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-xl-6">
+                <div class="category-card cat-kids d-flex flex-row-reverse" data-aos="fade-up" data-aos-delay="400">
+                  <div class="category-image">
+                    <img src="{% static 'assets/img/person/person-8.webp' %}" alt="مد کودک" class="img-fluid">
+                  </div>
+                  <div class="category-content">
+                    <h4>مد کودک</h4>
+                    <p>۱۸۵ محصول</p>
+                    <a href="#" class="card-link">همین حالا خرید کنید <i class="bi bi-arrow-right"></i></a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-xl-6">
+                <div class="category-card cat-cosmetics d-flex flex-row-reverse" data-aos="fade-up" data-aos-delay="500">
+                  <div class="category-image">
+                    <img src="{% static 'assets/img/person/person-1.webp' %}" alt="لوازم آرایشی" class="img-fluid">
+                  </div>
+                  <div class="category-content">
+                    <h4>محصولات زیبایی</h4>
+                    <p>۱۲۷ محصول</p>
+                    <a href="#" class="card-link">همین حالا خرید کنید <i class="bi bi-arrow-right"></i></a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-xl-6">
+                <div class="category-card cat-accessories d-flex flex-row-reverse" data-aos="fade-up" data-aos-delay="600">
+                  <div class="category-image">
+                    <img src="{% static 'assets/img/person/person-3.webp' %}" alt="اکسسوری" class="img-fluid">
+                  </div>
+                  <div class="category-content">
+                    <h4>اکسسوری</h4>
+                    <p>۳۰۸ محصول</p>
+                    <a href="#" class="card-link">همین حالا خرید کنید <i class="bi bi-arrow-right"></i></a>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- /Promo Cards Section -->
+
+    <!-- Best Sellers Section -->
+    <section id="best-sellers" class="best-sellers section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>پرفروش‌ها</h2>
+        <p>با ارائه خدمات و محصولات باکیفیت، تجربه‌ای بهتر برای مشتریان خود می‌سازیم.</p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row g-5">
+
+          <!-- Product 1 -->
+          <div class="col-lg-3 col-md-6">
+            <div class="product-item">
+              <div class="product-image">
+                <div class="product-badge">محدود</div>
+                <img src="{% static 'assets/img/person/person-1.webp' %}" alt="تصویر محصول" class="img-fluid" loading="lazy">
+                <div class="product-actions">
+                  <button class="action-btn wishlist-btn">
+                    <i class="bi bi-heart"></i>
+                  </button>
+                  <button class="action-btn compare-btn">
+                    <i class="bi bi-arrow-left-right"></i>
+                  </button>
+                  <button class="action-btn quickview-btn">
+                    <i class="bi bi-zoom-in"></i>
+                  </button>
+                </div>
+                <button class="cart-btn">انتخاب گزینه‌ها</button>
+              </div>
+              <div class="product-info">
+                <div class="product-category">مجموعه پریمیوم</div>
+                <h4 class="product-name"><a href="{% url 'catalog:product-details' %}">مجموعه‌ای متنوع و باکیفیت برای انتخاب شما</a></h4>
+                <div class="product-rating">
+                  <div class="stars">
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star"></i>
+                  </div>
+                  <span class="rating-count">(24)</span>
+                </div>
+                <div class="product-price">$189.00</div>
+                <div class="color-swatches">
+                  <span class="swatch active" style="background-color: #2563eb;"></span>
+                  <span class="swatch" style="background-color: #059669;"></span>
+                  <span class="swatch" style="background-color: #dc2626;"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- End Product 1 -->
+
+          <!-- Product 2 -->
+          <div class="col-lg-3 col-md-6">
+            <div class="product-item">
+              <div class="product-image">
+                <div class="product-badge sale-badge">۲۵٪ تخفیف</div>
+                <img src="{% static 'assets/img/person/person-4.webp' %}" alt="تصویر محصول" class="img-fluid" loading="lazy">
+                <div class="product-actions">
+                  <button class="action-btn wishlist-btn">
+                    <i class="bi bi-heart"></i>
+                  </button>
+                  <button class="action-btn compare-btn">
+                    <i class="bi bi-arrow-left-right"></i>
+                  </button>
+                  <button class="action-btn quickview-btn">
+                    <i class="bi bi-zoom-in"></i>
+                  </button>
+                </div>
+                <button class="cart-btn">افزودن به سبد خرید</button>
+              </div>
+              <div class="product-info">
+                <div class="product-category">پرفروش‌ها</div>
+                <h4 class="product-name"><a href="{% url 'catalog:product-details' %}">محصولات منتخب ما را ببینید</a></h4>
+                <div class="product-rating">
+                  <div class="stars">
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-half"></i>
+                  </div>
+                  <span class="rating-count">(38)</span>
+                </div>
+                <div class="product-price">
+                  <span class="old-price">$240.00</span>
+                  <span class="current-price">$180.00</span>
+                </div>
+                <div class="color-swatches">
+                  <span class="swatch active" style="background-color: #1f2937;"></span>
+                  <span class="swatch" style="background-color: #f59e0b;"></span>
+                  <span class="swatch" style="background-color: #8b5cf6;"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- End Product 2 -->
+
+          <!-- Product 3 -->
+          <div class="col-lg-3 col-md-6">
+            <div class="product-item">
+              <div class="product-image">
+                <img src="{% static 'assets/img/person/person-7.webp' %}" alt="تصویر محصول" class="img-fluid" loading="lazy">
+                <div class="product-actions">
+                  <button class="action-btn wishlist-btn">
+                    <i class="bi bi-heart"></i>
+                  </button>
+                  <button class="action-btn compare-btn">
+                    <i class="bi bi-arrow-left-right"></i>
+                  </button>
+                  <button class="action-btn quickview-btn">
+                    <i class="bi bi-zoom-in"></i>
+                  </button>
+                </div>
+                <button class="cart-btn">افزودن به سبد خرید</button>
+              </div>
+              <div class="product-info">
+                <div class="product-category">تازه‌رسیده‌ها</div>
+                <h4 class="product-name"><a href="{% url 'catalog:product-details' %}">با محصولات منتخب ما آشنا شوید</a></h4>
+                <div class="product-rating">
+                  <div class="stars">
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star"></i>
+                    <i class="bi bi-star"></i>
+                  </div>
+                  <span class="rating-count">(12)</span>
+                </div>
+                <div class="product-price">$95.00</div>
+                <div class="color-swatches">
+                  <span class="swatch active" style="background-color: #ef4444;"></span>
+                  <span class="swatch" style="background-color: #06b6d4;"></span>
+                  <span class="swatch" style="background-color: #10b981;"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- End Product 3 -->
+
+          <!-- Product 4 -->
+          <div class="col-lg-3 col-md-6">
+            <div class="product-item">
+              <div class="product-image">
+                <div class="product-badge trending-badge">ترند</div>
+                <img src="{% static 'assets/img/person/person-2.webp' %}" alt="تصویر محصول" class="img-fluid" loading="lazy">
+                <div class="product-actions">
+                  <button class="action-btn wishlist-btn active">
+                    <i class="bi bi-heart-fill"></i>
+                  </button>
+                  <button class="action-btn compare-btn">
+                    <i class="bi bi-arrow-left-right"></i>
+                  </button>
+                  <button class="action-btn quickview-btn">
+                    <i class="bi bi-zoom-in"></i>
+                  </button>
+                </div>
+                <button class="cart-btn">افزودن به سبد خرید</button>
+              </div>
+              <div class="product-info">
+                <div class="product-category">مجموعه طراحان</div>
+                <h4 class="product-name"><a href="{% url 'catalog:product-details' %}">برای دریافت راهنمایی بیشتر با ما تماس بگیرید</a></h4>
+                <div class="product-rating">
+                  <div class="stars">
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                  </div>
+                  <span class="rating-count">(56)</span>
+                </div>
+                <div class="product-price">$165.00</div>
+                <div class="color-swatches">
+                  <span class="swatch" style="background-color: #64748b;"></span>
+                  <span class="swatch active" style="background-color: #7c3aed;"></span>
+                  <span class="swatch" style="background-color: #f59e0b;"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- End Product 4 -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Best Sellers Section -->
+
+    <!-- Cards Section -->
+    <section id="cards" class="cards section">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+          <div class="col-lg-4 col-md-6 mb-5 mb-md-0" data-aos="fade-up" data-aos-delay="200">
+            <div class="product-category">
+              <h3 class="category-title">
+                <i class="bi bi-fire"></i> محبوب این روزها
+              </h3>
+              <div class="product-list">
+                <div class="product-card">
+                  <div class="product-image">
+                    <img src="{% static 'assets/img/person/person-1.webp' %}" alt="کیف دستی چرمی پریمیوم" class="img-fluid">
+                    <div class="product-badges">
+                      <span class="badge-new">جدید</span>
+                    </div>
+                  </div>
+                  <div class="product-info">
+                    <h4 class="product-name">کیف دستی چرمی پریمیوم</h4>
+                    <div class="product-rating">
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-half"></i>
+                      <span>(24)</span>
+                    </div>
+                    <div class="product-price">
+                      <span class="current-price">$87.50</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="product-card">
+                  <div class="product-image">
+                    <img src="{% static 'assets/img/person/person-3.webp' %}" alt="گوشواره شاخص" class="img-fluid">
+                  </div>
+                  <div class="product-info">
+                    <h4 class="product-name">گوشواره شاخص</h4>
+                    <div class="product-rating">
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <span>(41)</span>
+                    </div>
+                    <div class="product-price">
+                      <span class="current-price">$39.99</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="product-card">
+                  <div class="product-image">
+                    <img src="{% static 'assets/img/person/person-5.webp' %}" alt="پیراهن پنبه ارگانیک" class="img-fluid">
+                  </div>
+                  <div class="product-info">
+                    <h4 class="product-name">پیراهن پنبه ارگانیک</h4>
+                    <div class="product-rating">
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star"></i>
+                      <span>(18)</span>
+                    </div>
+                    <div class="product-price">
+                      <span class="current-price">$45.00</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-5 mb-md-0" data-aos="fade-up" data-aos-delay="300">
+            <div class="product-category">
+              <h3 class="category-title">
+                <i class="bi bi-award"></i> پرفروش‌ها
+              </h3>
+              <div class="product-list">
+                <div class="product-card">
+                  <div class="product-image">
+                    <img src="{% static 'assets/img/person/person-2.webp' %}" alt="جین فیت اسلیم" class="img-fluid">
+                    <div class="product-badges">
+                      <span class="badge-sale">-15%</span>
+                    </div>
+                  </div>
+                  <div class="product-info">
+                    <h4 class="product-name">جین فیت اسلیم</h4>
+                    <div class="product-rating">
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <span>(87)</span>
+                    </div>
+                    <div class="product-price">
+                      <span class="current-price">$68.00</span>
+                      <span class="old-price">$80.00</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="product-card">
+                  <div class="product-image">
+                    <img src="{% static 'assets/img/person/person-6.webp' %}" alt="کیف دستی طراح" class="img-fluid">
+                  </div>
+                  <div class="product-info">
+                    <h4 class="product-name">کیف دستی طراح</h4>
+                    <div class="product-rating">
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-half"></i>
+                      <span>(56)</span>
+                    </div>
+                    <div class="product-price">
+                      <span class="current-price">$129.99</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="product-card">
+                  <div class="product-image">
+                    <img src="{% static 'assets/img/person/person-8.webp' %}" alt="کیف دوشی چرمی" class="img-fluid">
+                    <div class="product-badges">
+                      <span class="badge-hot">داغ</span>
+                    </div>
+                  </div>
+                  <div class="product-info">
+                    <h4 class="product-name">کیف دوشی چرمی</h4>
+                    <div class="product-rating">
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <span>(112)</span>
+                    </div>
+                    <div class="product-price">
+                      <span class="current-price">$95.50</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-5 mb-md-0" data-aos="fade-up" data-aos-delay="400">
+            <div class="product-category">
+              <h3 class="category-title">
+                <i class="bi bi-star"></i> محصولات منتخب
+              </h3>
+              <div class="product-list">
+                <div class="product-card">
+                  <div class="product-image">
+                    <img src="{% static 'assets/img/person/person-7.webp' %}" alt="دامن میدی پلیسه" class="img-fluid">
+                  </div>
+                  <div class="product-info">
+                    <h4 class="product-name">دامن میدی پلیسه</h4>
+                    <div class="product-rating">
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star"></i>
+                      <span>(32)</span>
+                    </div>
+                    <div class="product-price">
+                      <span class="current-price">$75.00</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="product-card">
+                  <div class="product-image">
+                    <img src="{% static 'assets/img/person/person-4.webp' %}" alt="گوشواره هندسی" class="img-fluid">
+                    <div class="product-badges">
+                      <span class="badge-limited">محدود</span>
+                    </div>
+                  </div>
+                  <div class="product-info">
+                    <h4 class="product-name">گوشواره هندسی</h4>
+                    <div class="product-rating">
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-half"></i>
+                      <span>(47)</span>
+                    </div>
+                    <div class="product-price">
+                      <span class="current-price">$42.99</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="product-card">
+                  <div class="product-image">
+                    <img src="{% static 'assets/img/person/person-9.webp' %}" alt="کیف دستی ساختارمند" class="img-fluid">
+                  </div>
+                  <div class="product-info">
+                    <h4 class="product-name">کیف دستی ساختارمند</h4>
+                    <div class="product-rating">
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <span>(64)</span>
+                    </div>
+                    <div class="product-price">
+                      <span class="current-price">$89.99</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section><!-- /Cards Section -->
+
+    <!-- Call To Action Section -->
+    <section id="call-to-action" class="call-to-action section">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <div class="main-content text-center" data-aos="zoom-in" data-aos-delay="200">
+              <div class="offer-badge" data-aos="fade-down" data-aos-delay="250">
+                <span class="limited-time">فرصت محدود</span>
+                <span class="offer-text">۵۰٪ تخفیف</span>
+              </div>
+
+              <h2 data-aos="fade-up" data-aos-delay="300">فروش ویژه محدود</h2>
+
+              <p class="subtitle" data-aos="fade-up" data-aos-delay="350">بزرگ‌ترین حراج سال را از دست ندهید؛ محصولات باکیفیت با قیمت‌هایی استثنایی، فقط برای ۴۸ ساعت آینده.</p>
+
+              <div class="countdown-wrapper" data-aos="fade-up" data-aos-delay="400">
+                <div class="countdown d-flex justify-content-center" data-count="2025/12/31">
+                  <div>
+                    <h3 class="count-days"></h3>
+                    <h4>روز</h4>
+                  </div>
+                  <div>
+                    <h3 class="count-hours"></h3>
+                    <h4>ساعت</h4>
+                  </div>
+                  <div>
+                    <h3 class="count-minutes"></h3>
+                    <h4>دقیقه</h4>
+                  </div>
+                  <div>
+                    <h3 class="count-seconds"></h3>
+                    <h4>ثانیه</h4>
+                  </div>
+                </div>
+              </div>
+
+              <div class="action-buttons" data-aos="fade-up" data-aos-delay="450">
+                <a href="#" class="btn-shop-now">همین حالا خرید کنید</a>
+                <a href="#" class="btn-view-deals">مشاهده همه پیشنهادها</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row featured-products-row" data-aos="fade-up" data-aos-delay="500">
+          <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="100">
+            <div class="product-showcase">
+              <div class="product-image">
+                <img src="{% static 'assets/img/person/person-5.webp' %}" alt="محصول منتخب" class="img-fluid">
+                <div class="discount-badge">-45%</div>
+              </div>
+              <div class="product-details">
+                <h6>هدفون بی‌سیم پریمیوم</h6>
+                <div class="price-section">
+                  <span class="original-price">$129</span>
+                  <span class="sale-price">$71</span>
+                </div>
+                <div class="rating-stars">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <span class="rating-count">(324)</span>
+                </div>
+              </div>
+            </div>
+          </div><!-- End Product Showcase -->
+
+          <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="150">
+            <div class="product-showcase">
+              <div class="product-image">
+                <img src="{% static 'assets/img/person/person-7.webp' %}" alt="محصول منتخب" class="img-fluid">
+                <div class="discount-badge">-60%</div>
+              </div>
+              <div class="product-details">
+                <h6>ردیاب هوشمند تناسب‌اندام</h6>
+                <div class="price-section">
+                  <span class="original-price">$89</span>
+                  <span class="sale-price">$36</span>
+                </div>
+                <div class="rating-stars">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-half"></i>
+                  <span class="rating-count">(198)</span>
+                </div>
+              </div>
+            </div>
+          </div><!-- End Product Showcase -->
+
+          <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="200">
+            <div class="product-showcase">
+              <div class="product-image">
+                <img src="{% static 'assets/img/person/person-2.webp' %}" alt="محصول منتخب" class="img-fluid">
+                <div class="discount-badge">-35%</div>
+              </div>
+              <div class="product-details">
+                <h6>کوله‌پشتی مسافرتی لوکس</h6>
+                <div class="price-section">
+                  <span class="original-price">$159</span>
+                  <span class="sale-price">$103</span>
+                </div>
+                <div class="rating-stars">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <span class="rating-count">(267)</span>
+                </div>
+              </div>
+            </div>
+          </div><!-- End Product Showcase -->
+
+          <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="250">
+            <div class="product-showcase">
+              <div class="product-image">
+                <img src="{% static 'assets/img/person/person-1.webp' %}" alt="محصول منتخب" class="img-fluid">
+                <div class="discount-badge">-55%</div>
+              </div>
+              <div class="product-details">
+                <h6>مجموعه ماگ قهوه دست‌ساز</h6>
+                <div class="price-section">
+                  <span class="original-price">$75</span>
+                  <span class="sale-price">$34</span>
+                </div>
+                <div class="rating-stars">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star"></i>
+                  <span class="rating-count">(142)</span>
+                </div>
+              </div>
+            </div>
+          </div><!-- End Product Showcase -->
+        </div>
+
+      </div>
+
+    </section><!-- /Call To Action Section -->
+
+  
+{% endblock content %}

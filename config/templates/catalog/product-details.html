@@ -1,0 +1,524 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_title %}جزئیات محصول{% endblock %}
+{% block meta_description %}مشخصات، ویژگی‌ها و دیدگاه‌های مربوط به محصول را در Hydrolalehzar بررسی کنید.{% endblock %}
+{% block og_type %}product{% endblock %}
+{% block body_class %}product-details-page{% endblock %}
+{% block nav_product %} class="active" aria-current="page"{% endblock %}
+
+{% block content %}
+    <!-- Page Title -->
+    <div class="page-title light-background">
+      <div class="container d-lg-flex justify-content-between align-items-center">
+        <h1 class="mb-2 mb-lg-0">جزئیات محصول</h1>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="{% url 'website:index' %}">صفحه اصلی</a></li>
+            <li class="current">جزئیات محصول</li>
+          </ol>
+        </nav>
+      </div>
+    </div><!-- End Page Title -->
+
+    <!-- Product Details Section -->
+    <section id="product-details" class="product-details section">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row g-4">
+          <!-- Product Gallery -->
+          <div class="col-lg-7" data-aos="zoom-in" data-aos-delay="150">
+            <div class="product-gallery">
+              <div class="main-showcase">
+                <div class="image-zoom-container">
+                  <img src="{% static 'assets/img/person/person-6.webp' %}" alt="تصویر اصلی محصول" class="img-fluid main-product-image drift-zoom" id="main-product-image" data-zoom="{% static 'assets/img/person/person-6.webp' %}">
+
+                  <div class="image-navigation">
+                    <button class="nav-arrow prev-image image-nav-btn prev-image" type="button">
+                      <i class="bi bi-chevron-left"></i>
+                    </button>
+                    <button class="nav-arrow next-image image-nav-btn next-image" type="button">
+                      <i class="bi bi-chevron-right"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="thumbnail-grid">
+                <div class="thumbnail-wrapper thumbnail-item active" data-image="{% static 'assets/img/person/person-6.webp' %}">
+                  <img src="{% static 'assets/img/person/person-6.webp' %}" alt="نمای ۱" class="img-fluid">
+                </div>
+                <div class="thumbnail-wrapper thumbnail-item" data-image="{% static 'assets/img/person/person-7.webp' %}">
+                  <img src="{% static 'assets/img/person/person-7.webp' %}" alt="نمای ۲" class="img-fluid">
+                </div>
+                <div class="thumbnail-wrapper thumbnail-item" data-image="{% static 'assets/img/person/person-8.webp' %}">
+                  <img src="{% static 'assets/img/person/person-8.webp' %}" alt="نمای ۳" class="img-fluid">
+                </div>
+                <div class="thumbnail-wrapper thumbnail-item" data-image="{% static 'assets/img/person/person-4.webp' %}">
+                  <img src="{% static 'assets/img/person/person-4.webp' %}" alt="نمای ۴" class="img-fluid">
+                </div>
+                <div class="thumbnail-wrapper thumbnail-item" data-image="{% static 'assets/img/person/person-5.webp' %}">
+                  <img src="{% static 'assets/img/person/person-5.webp' %}" alt="نمای ۵" class="img-fluid">
+                </div>
+                <div class="thumbnail-wrapper thumbnail-item" data-image="{% static 'assets/img/person/person-3.webp' %}">
+                  <img src="{% static 'assets/img/person/person-3.webp' %}" alt="نمای ۶" class="img-fluid">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product Details -->
+          <div class="col-lg-5" data-aos="fade-left" data-aos-delay="200">
+            <div class="product-details">
+              <div class="product-badge-container">
+                <span class="badge-category">تجهیزات صوتی</span>
+                <div class="rating-group">
+                  <div class="stars">
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-half"></i>
+                  </div>
+                  <span class="review-text">(۱۲۷ دیدگاه)</span>
+                </div>
+              </div>
+
+              <h1 class="product-name">صدایی شفاف و قدرتمند، مناسب برای استفاده روزمره و سفر</h1>
+
+              <div class="pricing-section">
+                <div class="price-display">
+                  <span class="sale-price">$189.99</span>
+                  <span class="regular-price">$239.99</span>
+                </div>
+                <div class="savings-info">
+                  <span class="save-amount">۵۰ دلار تخفیف</span>
+                  <span class="discount-percent">(۲۱٪ تخفیف)</span>
+                </div>
+              </div>
+
+              <div class="product-description">
+                <p>از صدایی فراگیر و شفاف در کنار طراحی راحت و امکانات کاربردی لذت ببرید. این محصول برای شنیدن موسیقی، تماشای فیلم و تماس‌های روزانه انتخابی مناسب است.</p>
+              </div>
+
+              <div class="availability-status">
+                <div class="stock-indicator">
+                  <i class="bi bi-check-circle-fill"></i>
+                  <span class="stock-text">موجود</span>
+                </div>
+                <div class="quantity-left">فقط ۱۸ عدد باقی مانده</div>
+              </div>
+
+              <!-- Product Variants -->
+              <div class="variant-section">
+                <div class="color-selection">
+                  <label class="variant-label">رنگ‌های موجود:</label>
+                  <div class="color-grid">
+                    <div class="color-chip active" data-color="Midnight Black" style="background: linear-gradient(135deg, #1a1a1a, #000);">
+                      <span class="selection-check"><i class="bi bi-check"></i></span>
+                    </div>
+                    <div class="color-chip" data-color="Pearl White" style="background: linear-gradient(135deg, #f8f9fa, #e9ecef);">
+                      <span class="selection-check"><i class="bi bi-check"></i></span>
+                    </div>
+                    <div class="color-chip" data-color="Ocean Blue" style="background: linear-gradient(135deg, #0066cc, #004499);">
+                      <span class="selection-check"><i class="bi bi-check"></i></span>
+                    </div>
+                    <div class="color-chip" data-color="Forest Green" style="background: linear-gradient(135deg, #28a745, #155724);">
+                      <span class="selection-check"><i class="bi bi-check"></i></span>
+                    </div>
+                  </div>
+                  <div class="selected-variant">انتخاب‌شده: <span>مشکی نیمه‌شب</span></div>
+                </div>
+              </div>
+
+              <!-- Purchase Options -->
+              <div class="purchase-section">
+                <div class="quantity-control">
+                  <label class="control-label">تعداد:</label>
+                  <div class="quantity-input-group">
+                    <div class="quantity-selector">
+                      <button class="quantity-btn decrease" type="button">
+                        <i class="bi bi-dash"></i>
+                      </button>
+                      <input type="number" class="quantity-input" value="1" min="1" max="18">
+                      <button class="quantity-btn increase" type="button">
+                        <i class="bi bi-plus"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="action-buttons">
+                  <button class="btn primary-action">
+                    <i class="bi bi-bag-plus"></i>
+                    افزودن به سبد خرید
+                  </button>
+                  <button class="btn secondary-action">
+                    <i class="bi bi-lightning"></i>
+                    خرید
+                  </button>
+                  <button class="btn icon-action" title="افزودن به علاقه‌مندی‌ها">
+                    <i class="bi bi-heart"></i>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Benefits List -->
+              <div class="benefits-list">
+                <div class="benefit-item">
+                  <i class="bi bi-truck"></i>
+                  <span>ارسال رایگان برای سفارش‌های بالای ۷۵ دلار</span>
+                </div>
+                <div class="benefit-item">
+                  <i class="bi bi-arrow-clockwise"></i>
+                  <span>امکان بازگشت آسان تا ۴۵ روز</span>
+                </div>
+                <div class="benefit-item">
+                  <i class="bi bi-shield-check"></i>
+                  <span>ضمانت سه‌ساله سازنده</span>
+                </div>
+                <div class="benefit-item">
+                  <i class="bi bi-headset"></i>
+                  <span>پشتیبانی شبانه‌روزی در دسترس است</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Information Tabs -->
+        <div class="row mt-5" data-aos="fade-up" data-aos-delay="300">
+          <div class="col-12">
+            <div class="info-tabs-container">
+              <nav class="tabs-navigation nav">
+                <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#ecommerce-product-details-5-overview" type="button">معرفی</button>
+                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#ecommerce-product-details-5-technical" type="button">مشخصات فنی</button>
+                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#ecommerce-product-details-5-customer-reviews" type="button">دیدگاه‌ها (۱۲۷)</button>
+              </nav>
+
+              <div class="tab-content">
+                <!-- Overview Tab -->
+                <div class="tab-pane fade show active" id="ecommerce-product-details-5-overview">
+                  <div class="overview-content">
+                    <div class="row g-4">
+                      <div class="col-lg-8">
+                        <div class="content-section">
+                          <h3>معرفی محصول</h3>
+                          <p>این هدفون با طراحی راحت و صدای باکیفیت برای گوش‌دادن طولانی‌مدت مناسب است. اتصال بی‌سیم و قابلیت‌های کاربردی، استفاده روزمره از آن را آسان می‌کند.</p>
+
+                          <h4>ویژگی‌های برجسته</h4>
+                          <div class="highlights-grid">
+                            <div class="highlight-card">
+                              <i class="bi bi-volume-up"></i>
+                              <h5>صدای باکیفیت</h5>
+                              <p>صدایی شفاف و متعادل برای تجربه شنیداری بهتر</p>
+                            </div>
+                            <div class="highlight-card">
+                              <i class="bi bi-battery-charging"></i>
+                              <h5>باتری بادوام</h5>
+                              <p>با یک‌بار شارژ، ساعت‌ها از موسیقی لذت ببرید</p>
+                            </div>
+                            <div class="highlight-card">
+                              <i class="bi bi-wifi"></i>
+                              <h5>فناوری بی‌سیم</h5>
+                              <p>اتصال بی‌سیم پایدار و آسان</p>
+                            </div>
+                            <div class="highlight-card">
+                              <i class="bi bi-person-check"></i>
+                              <h5>طراحی راحت</h5>
+                              <p>طراحی ارگونومیک برای استفاده راحت در طول روز</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-lg-4">
+                        <div class="package-contents">
+                          <h4>محتویات بسته‌بندی</h4>
+                          <ul class="contents-list">
+                            <li><i class="bi bi-check-circle"></i>دستگاه صوتی پریمیوم</li>
+                            <li><i class="bi bi-check-circle"></i>کیف حمل پریمیوم</li>
+                            <li><i class="bi bi-check-circle"></i>کابل شارژ سریع USB-C</li>
+                            <li><i class="bi bi-check-circle"></i>رابط صوتی ۳٫۵ میلی‌متری</li>
+                            <li><i class="bi bi-check-circle"></i>راهنمای شروع سریع</li>
+                            <li><i class="bi bi-check-circle"></i>مدارک ضمانت</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Technical Details Tab -->
+                <div class="tab-pane fade" id="ecommerce-product-details-5-technical">
+                  <div class="technical-content">
+                    <div class="row g-4">
+                      <div class="col-md-6">
+                        <div class="tech-group">
+                          <h4>مشخصات صوتی</h4>
+                          <div class="spec-table">
+                            <div class="spec-row">
+                              <span class="spec-name">محدوده فرکانس</span>
+                              <span class="spec-value">۱۵ هرتز تا ۲۵ کیلوهرتز</span>
+                            </div>
+                            <div class="spec-row">
+                              <span class="spec-name">قطر درایور</span>
+                              <span class="spec-value">داینامیک ۵۰ میلی‌متری</span>
+                            </div>
+                            <div class="spec-row">
+                              <span class="spec-name">حساسیت</span>
+                              <span class="spec-value">۹۸ دسی‌بل SPL</span>
+                            </div>
+                            <div class="spec-row">
+                              <span class="spec-name">امپدانس</span>
+                              <span class="spec-value">۲۴ اهم</span>
+                            </div>
+                            <div class="spec-row">
+                              <span class="spec-name">اعوجاج هارمونیک کل</span>
+                              <span class="spec-value">&lt; 0.5%</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-6">
+                        <div class="tech-group">
+                          <h4>اتصال و توان</h4>
+                          <div class="spec-table">
+                            <div class="spec-row">
+                              <span class="spec-name">پروتکل بی‌سیم</span>
+                              <span class="spec-value">بلوتوث ۵٫۳</span>
+                            </div>
+                            <div class="spec-row">
+                              <span class="spec-name">برد</span>
+                              <span class="spec-value">Up to 30ft (10m)</span>
+                            </div>
+                            <div class="spec-row">
+                              <span class="spec-name">ظرفیت باتری</span>
+                              <span class="spec-value">لیتیوم‌یون ۸۰۰ میلی‌آمپرساعت</span>
+                            </div>
+                            <div class="spec-row">
+                              <span class="spec-name">مدت استفاده</span>
+                              <span class="spec-value">بیش از ۳۵ ساعت</span>
+                            </div>
+                            <div class="spec-row">
+                              <span class="spec-name">مدت شارژ</span>
+                              <span class="spec-value">۲٫۵ ساعت</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-6">
+                        <div class="tech-group">
+                          <h4>ابعاد فیزیکی</h4>
+                          <div class="spec-table">
+                            <div class="spec-row">
+                              <span class="spec-name">وزن</span>
+                              <span class="spec-value">285g</span>
+                            </div>
+                            <div class="spec-row">
+                              <span class="spec-name">ابعاد</span>
+                              <span class="spec-value">190 x 165 x 82mm</span>
+                            </div>
+                            <div class="spec-row">
+                              <span class="spec-name">جنس گوشی‌ها</span>
+                              <span class="spec-value">فوم حافظه‌دار</span>
+                            </div>
+                            <div class="spec-row">
+                              <span class="spec-name">هدبند</span>
+                              <span class="spec-value">فلزی قابل تنظیم</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-6">
+                        <div class="tech-group">
+                          <h4>قابلیت‌های پیشرفته</h4>
+                          <div class="spec-table">
+                            <div class="spec-row">
+                              <span class="spec-name">حذف نویز</span>
+                              <span class="spec-value">حذف نویز فعال ترکیبی</span>
+                            </div>
+                            <div class="spec-row">
+                              <span class="spec-name">دستیار صوتی</span>
+                              <span class="spec-value">سیری و گوگل</span>
+                            </div>
+                            <div class="spec-row">
+                              <span class="spec-name">نوع میکروفون</span>
+                              <span class="spec-value">دوگانه</span>
+                            </div>
+                            <div class="spec-row">
+                              <span class="spec-name">استاندارد مقاومت در برابر آب</span>
+                              <span class="spec-value">IPX5</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Reviews Tab -->
+                <div class="tab-pane fade" id="ecommerce-product-details-5-customer-reviews">
+                  <div class="reviews-content">
+                    <div class="reviews-header">
+                      <div class="rating-overview">
+                        <div class="average-score">
+                          <div class="score-display">4.6</div>
+                          <div class="score-stars">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-half"></i>
+                          </div>
+                          <div class="total-reviews">۱۲۷ دیدگاه مشتریان</div>
+                        </div>
+
+                        <div class="rating-distribution">
+                          <div class="rating-row">
+                            <span class="stars-label">5★</span>
+                            <div class="progress-container">
+                              <div class="progress-fill" style="width: 68%;"></div>
+                            </div>
+                            <span class="count-label">86</span>
+                          </div>
+                          <div class="rating-row">
+                            <span class="stars-label">4★</span>
+                            <div class="progress-container">
+                              <div class="progress-fill" style="width: 22%;"></div>
+                            </div>
+                            <span class="count-label">28</span>
+                          </div>
+                          <div class="rating-row">
+                            <span class="stars-label">3★</span>
+                            <div class="progress-container">
+                              <div class="progress-fill" style="width: 6%;"></div>
+                            </div>
+                            <span class="count-label">8</span>
+                          </div>
+                          <div class="rating-row">
+                            <span class="stars-label">2★</span>
+                            <div class="progress-container">
+                              <div class="progress-fill" style="width: 3%;"></div>
+                            </div>
+                            <span class="count-label">4</span>
+                          </div>
+                          <div class="rating-row">
+                            <span class="stars-label">1★</span>
+                            <div class="progress-container">
+                              <div class="progress-fill" style="width: 1%;"></div>
+                            </div>
+                            <span class="count-label">1</span>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="write-review-cta">
+                        <h4>تجربه خود را به اشتراک بگذارید</h4>
+                        <p>به دیگران برای انتخاب آگاهانه کمک کنید</p>
+                        <button class="btn review-btn">ثبت دیدگاه</button>
+                      </div>
+                    </div>
+
+                    <div class="customer-reviews-list">
+                      <div class="review-card">
+                        <div class="reviewer-profile">
+                          <img src="{% static 'assets/img/person/person-3.webp' %}" alt="مشتری" class="profile-pic">
+                          <div class="profile-details">
+                            <div class="customer-name">سارا مارتینز</div>
+                            <div class="review-meta">
+                              <div class="review-stars">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                              </div>
+                              <span class="review-date">۲۸ مارس ۲۰۲۴</span>
+                            </div>
+                          </div>
+                        </div>
+                        <h5 class="review-headline">کیفیت صدای عالی و بسیار راحت</h5>
+                        <div class="review-text">
+                          <p>کیفیت صدای این هدفون بسیار خوب است و حتی پس از چند ساعت استفاده احساس خستگی نمی‌کنم.</p>
+                        </div>
+                        <div class="review-actions">
+                          <button class="action-btn"><i class="bi bi-hand-thumbs-up"></i> ۱۲ نفر مفید دانستند</button>
+                          <button class="action-btn"><i class="bi bi-chat-dots"></i> پاسخ</button>
+                        </div>
+                      </div>
+
+                      <div class="review-card">
+                        <div class="reviewer-profile">
+                          <img src="{% static 'assets/img/person/person-5.webp' %}" alt="مشتری" class="profile-pic">
+                          <div class="profile-details">
+                            <div class="customer-name">دیوید چن</div>
+                            <div class="review-meta">
+                              <div class="review-stars">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star"></i>
+                              </div>
+                              <span class="review-date">۱۵ مارس ۲۰۲۴</span>
+                            </div>
+                          </div>
+                        </div>
+                        <h5 class="review-headline">ارزش خرید بالا، با کمی مشکل در اتصال</h5>
+                        <div class="review-text">
+                          <p>کیفیت صدا و امکانات نسبت به قیمت مناسب است. در مجموع از خریدم راضی هستم.</p>
+                        </div>
+                        <div class="review-actions">
+                          <button class="action-btn"><i class="bi bi-hand-thumbs-up"></i> ۸ نفر مفید دانستند</button>
+                          <button class="action-btn"><i class="bi bi-chat-dots"></i> پاسخ</button>
+                        </div>
+                      </div>
+
+                      <div class="review-card">
+                        <div class="reviewer-profile">
+                          <img src="{% static 'assets/img/person/person-7.webp' %}" alt="مشتری" class="profile-pic">
+                          <div class="profile-details">
+                            <div class="customer-name">امیلی رودریگز</div>
+                            <div class="review-meta">
+                              <div class="review-stars">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                              </div>
+                              <span class="review-date">۲۲ فوریه ۲۰۲۴</span>
+                            </div>
+                          </div>
+                        </div>
+                        <h5 class="review-headline">مناسب برای کار در صفحه اصلی</h5>
+                        <div class="review-text">
+                          <p>برای تماس‌های کاری و گوش‌دادن به موسیقی مناسب است و استفاده از آن راحت است.</p>
+                        </div>
+                        <div class="review-actions">
+                          <button class="action-btn"><i class="bi bi-hand-thumbs-up"></i> ۱۵ نفر مفید دانستند</button>
+                          <button class="action-btn"><i class="bi bi-chat-dots"></i> پاسخ</button>
+                        </div>
+                      </div>
+
+                      <div class="load-more-section">
+                        <button class="btn load-more-reviews">نمایش دیدگاه‌های بیشتر</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- /Product Details Section -->
+
+  
+{% endblock content %}

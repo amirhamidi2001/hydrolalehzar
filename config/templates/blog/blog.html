@@ -1,0 +1,340 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_title %}وبلاگ{% endblock %}
+{% block meta_description %}مقاله‌ها و تازه‌های سبک زندگی، فناوری و خرید را در وبلاگ Hydrolalehzar بخوانید.{% endblock %}
+{% block body_class %}index-page{% endblock %}
+{% block nav_blog %} class="active" aria-current="page"{% endblock %}
+
+{% block content %}
+    <!-- Page Title -->
+    <div class="page-title light-background">
+      <div class="container d-lg-flex justify-content-between align-items-center">
+        <h1 class="mb-2 mb-lg-0">وبلاگ</h1>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="{% url 'website:index' %}">صفحه اصلی</a></li>
+            <li class="current">وبلاگ</li>
+          </ol>
+        </nav>
+      </div>
+    </div><!-- End Page Title -->
+
+    <!-- Blog Hero Section -->
+    <section id="blog-hero" class="blog-hero section">
+
+      <div class="container" data-aos="fade-up">
+
+        <div class="row g-4">
+          <!-- Left Side Posts -->
+          <div class="col-lg-3">
+            <div class="side-posts">
+              <!-- Side Post 1 -->
+              <article class="post-item side-post" data-aos="fade-right" data-aos-delay="100">
+                <div class="post-img">
+                  <img src="{% static 'assets/img/person/person-3.webp' %}" alt="تصویر مقاله" class="img-fluid" loading="lazy">
+                  <span class="category entertainment">سرگرمی</span>
+                </div>
+                <div class="post-content">
+                  <h3 class="post-title">
+                    <a href="#">چطور انتخاب لباس مناسب، استایل شخصی ما را شکل می‌دهد؟</a>
+                  </h3>
+                  <div class="post-meta">
+                    <span>۱۵ مارس ۲۰۲۵</span>
+                    <span class="dot">•</span>
+                    <span>۳ دیدگاه</span>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Side Post 2 -->
+              <article class="post-item side-post" data-aos="fade-right" data-aos-delay="200">
+                <div class="post-img">
+                  <img src="{% static 'assets/img/person/person-9.webp' %}" alt="تصویر مقاله" class="img-fluid" loading="lazy">
+                  <span class="category technology">فناوری</span>
+                </div>
+                <div class="post-content">
+                  <h3 class="post-title">
+                    <a href="#">فناوری‌های کاربردی که زندگی روزمره را ساده‌تر می‌کنند</a>
+                  </h3>
+                  <div class="post-meta">
+                    <span>۱۴ مارس ۲۰۲۵</span>
+                    <span class="dot">•</span>
+                    <span>۵ دیدگاه</span>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <!-- Main Post -->
+          <div class="col-lg-6">
+            <article class="post-item main-post" data-aos="fade-up">
+              <div class="post-img">
+                <img src="{% static 'assets/img/person/person-7.webp' %}" alt="تصویر مقاله" class="img-fluid">
+                <span class="category business">کسب‌وکار</span>
+              </div>
+              <div class="post-content">
+                <h2 class="post-title">
+                  <a href="#">چطور خریدی آگاهانه‌تر و متناسب با نیازمان داشته باشیم؟</a>
+                </h2>
+                <p class="post-excerpt">
+                  پیش از خرید، نیازها و اولویت‌های خود را مشخص کنید. مقایسه ویژگی‌ها و توجه به کیفیت کمک می‌کند انتخابی مناسب‌تر و ماندگارتر داشته باشید.
+                </p>
+                <div class="post-meta">
+                  <span>۱۶ مارس ۲۰۲۵</span>
+                  <span class="dot">•</span>
+                  <span>۸ دیدگاه</span>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Right Side Posts -->
+          <div class="col-lg-3">
+            <div class="side-posts">
+              <!-- Side Post 3 -->
+              <article class="post-item side-post" data-aos="fade-left" data-aos-delay="100">
+                <div class="post-img">
+                  <img src="{% static 'assets/img/person/person-6.webp' %}" alt="تصویر مقاله" class="img-fluid" loading="lazy">
+                  <span class="category technology">فناوری</span>
+                </div>
+                <div class="post-content">
+                  <h3 class="post-title">
+                    <a href="#">نگاهی به روندهای تازه فناوری و محصولات هوشمند</a>
+                  </h3>
+                  <div class="post-meta">
+                    <span>۱۳ مارس ۲۰۲۵</span>
+                    <span class="dot">•</span>
+                    <span>۲ دیدگاه</span>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Side Post 4 -->
+              <article class="post-item side-post" data-aos="fade-left" data-aos-delay="200">
+                <div class="post-img">
+                  <img src="{% static 'assets/img/person/person-9.webp' %}" alt="تصویر مقاله" class="img-fluid" loading="lazy">
+                  <span class="category lifestyle">سبک زندگی</span>
+                </div>
+                <div class="post-content">
+                  <h3 class="post-title">
+                    <a href="#">چند پیشنهاد ساده برای ساختن یک سبک زندگی متعادل</a>
+                  </h3>
+                  <div class="post-meta">
+                    <span>۱۲ مارس ۲۰۲۵</span>
+                    <span class="dot">•</span>
+                    <span>۴ دیدگاه</span>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section><!-- /Blog Hero Section -->
+
+    <!-- Blog Posts Section -->
+    <section id="blog-posts" class="blog-posts section">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row gy-4">
+
+          <div class="col-lg-4">
+            <article>
+
+              <div class="post-img">
+                <img src="{% static 'assets/img/person/person-1.webp' %}" alt="تصویر مقاله" class="img-fluid">
+              </div>
+
+              <p class="post-category">جامعه</p>
+
+              <h2 class="title">
+                <a href="{% url 'blog:blog-details' %}">راهنمای انتخاب پوشاک متناسب با سلیقه و نیاز شما</a>
+              </h2>
+
+              <div class="d-flex align-items-center">
+                <img src="{% static 'assets/img/person/person-2.webp' %}" alt="نویسنده مقاله" class="img-fluid post-author-img flex-shrink-0">
+                <div class="post-meta">
+                  <p class="post-author">ماریا دو</p>
+                  <p class="post-date">
+                    <time datetime="2022-01-01">۱ ژانویه ۲۰۲۲</time>
+                  </p>
+                </div>
+              </div>
+
+            </article>
+          </div><!-- End post list item -->
+
+          <div class="col-lg-4">
+            <article>
+
+              <div class="post-img">
+                <img src="{% static 'assets/img/person/person-2.webp' %}" alt="تصویر مقاله" class="img-fluid">
+              </div>
+
+              <p class="post-category">ورزش</p>
+
+              <h2 class="title">
+                <a href="{% url 'blog:blog-details' %}">چطور کفش مناسب برای فعالیت روزانه انتخاب کنیم؟</a>
+              </h2>
+
+              <div class="d-flex align-items-center">
+                <img src="{% static 'assets/img/person/person-3.webp' %}" alt="نویسنده مقاله" class="img-fluid post-author-img flex-shrink-0">
+                <div class="post-meta">
+                  <p class="post-author">آلیسا مایر</p>
+                  <p class="post-date">
+                    <time datetime="2022-01-01">۵ ژوئن ۲۰۲۲</time>
+                  </p>
+                </div>
+              </div>
+
+            </article>
+          </div><!-- End post list item -->
+
+          <div class="col-lg-4">
+            <article>
+
+              <div class="post-img">
+                <img src="{% static 'assets/img/person/person-3.webp' %}" alt="تصویر مقاله" class="img-fluid">
+              </div>
+
+              <p class="post-category">سرگرمی</p>
+
+              <h2 class="title">
+                <a href="{% url 'blog:blog-details' %}">لوازم جانبی کاربردی برای صفحه اصلی و محل کار</a>
+              </h2>
+
+              <div class="d-flex align-items-center">
+                <img src="{% static 'assets/img/person/person-6.webp' %}" alt="نویسنده مقاله" class="img-fluid post-author-img flex-shrink-0">
+                <div class="post-meta">
+                  <p class="post-author">مارک داور</p>
+                  <p class="post-date">
+                    <time datetime="2022-01-01">۲۲ ژوئن ۲۰۲۲</time>
+                  </p>
+                </div>
+              </div>
+
+            </article>
+          </div><!-- End post list item -->
+
+          <div class="col-lg-4">
+            <article>
+
+              <div class="post-img">
+                <img src="{% static 'assets/img/person/person-4.webp' %}" alt="تصویر مقاله" class="img-fluid">
+              </div>
+
+              <p class="post-category">ورزش</p>
+
+              <h2 class="title">
+                <a href="{% url 'blog:blog-details' %}">چند راه ساده برای مراقبت بهتر از محصولات چرمی</a>
+              </h2>
+
+              <div class="d-flex align-items-center">
+                <img src="{% static 'assets/img/person/person-4.webp' %}" alt="نویسنده مقاله" class="img-fluid post-author-img flex-shrink-0">
+                <div class="post-meta">
+                  <p class="post-author">لیسا نیمار</p>
+                  <p class="post-date">
+                    <time datetime="2022-01-01">۳۰ ژوئن ۲۰۲۲</time>
+                  </p>
+                </div>
+              </div>
+
+            </article>
+          </div><!-- End post list item -->
+
+          <div class="col-lg-4">
+            <article>
+
+              <div class="post-img">
+                <img src="{% static 'assets/img/person/person-5.webp' %}" alt="تصویر مقاله" class="img-fluid">
+              </div>
+
+              <p class="post-category">جامعه</p>
+
+              <h2 class="title">
+                <a href="{% url 'blog:blog-details' %}">چطور محصول باکیفیت را از میان گزینه‌های مختلف پیدا کنیم؟</a>
+              </h2>
+
+              <div class="d-flex align-items-center">
+                <img src="{% static 'assets/img/person/person-1.webp' %}" alt="نویسنده مقاله" class="img-fluid post-author-img flex-shrink-0">
+                <div class="post-meta">
+                  <p class="post-author">دنیس پترسون</p>
+                  <p class="post-date">
+                    <time datetime="2022-01-01">۳۰ ژانویه ۲۰۲۲</time>
+                  </p>
+                </div>
+              </div>
+
+            </article>
+          </div><!-- End post list item -->
+
+          <div class="col-lg-4">
+            <article>
+
+              <div class="post-img">
+                <img src="{% static 'assets/img/person/person-6.webp' %}" alt="تصویر مقاله" class="img-fluid">
+              </div>
+
+              <p class="post-category">سرگرمی</p>
+
+              <h2 class="title">
+                <a href="{% url 'blog:blog-details' %}">ایده‌هایی برای هدیه دادن در مناسبت‌های مختلف</a>
+              </h2>
+
+              <div class="d-flex align-items-center">
+                <img src="{% static 'assets/img/person/person-5.webp' %}" alt="نویسنده مقاله" class="img-fluid post-author-img flex-shrink-0">
+                <div class="post-meta">
+                  <p class="post-author">میکا لندون</p>
+                  <p class="post-date">
+                    <time datetime="2022-01-01">۱۴ فوریه ۲۰۲۲</time>
+                  </p>
+                </div>
+              </div>
+
+            </article>
+          </div><!-- End post list item -->
+
+        </div>
+      </div>
+
+    </section><!-- /Blog Posts Section -->
+
+    <!-- Pagination 2 Section -->
+    <section id="pagination-2" class="pagination-2 section">
+
+      <div class="container">
+        <nav class="d-flex justify-content-center" aria-label="پیمایش صفحات">
+          <ul>
+            <li>
+              <a href="#" aria-label="صفحه قبلی">
+                <i class="bi bi-arrow-left"></i>
+                <span class="d-none d-sm-inline">قبلی</span>
+              </a>
+            </li>
+
+            <li><a href="#" class="active">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li class="ellipsis">...</li>
+            <li><a href="#">8</a></li>
+            <li><a href="#">9</a></li>
+            <li><a href="#">10</a></li>
+
+            <li>
+              <a href="#" aria-label="صفحه بعدی">
+                <span class="d-none d-sm-inline">بعدی</span>
+                <i class="bi bi-arrow-right"></i>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+    </section><!-- /Pagination 2 Section -->
+
+  
+{% endblock content %}

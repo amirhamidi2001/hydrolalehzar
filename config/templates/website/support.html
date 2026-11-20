@@ -1,0 +1,198 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_title %}پشتیبانی{% endblock %}
+{% block meta_description %}برای پیگیری سفارش، ارسال، پرداخت و حساب کاربری از راهنمای پشتیبانی Hydrolalehzar استفاده کنید.{% endblock %}
+{% block body_class %}support-page{% endblock %}
+
+{% block content %}
+    <!-- Page Title -->
+    <div class="page-title light-background">
+      <div class="container d-lg-flex justify-content-between align-items-center">
+        <h1 class="mb-2 mb-lg-0">پشتیبانی</h1>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="{% url 'website:index' %}">صفحه اصلی</a></li>
+            <li class="current">پشتیبانی</li>
+          </ol>
+        </nav>
+      </div>
+    </div><!-- End Page Title -->
+
+    <!-- Support Section -->
+    <section id="support" class="support section">
+
+      <div class="container" data-aos="fade-up">
+
+        <!-- Support Header -->
+        <div class="support-header" data-aos="fade-up">
+          <div class="header-content">
+            <h2>مرکز راهنما و پشتیبانی</h2>
+            <p>پاسخ پرسش‌ها، آموزش‌ها و راهنمایی تیم پشتیبانی را پیدا کنید</p>
+          </div>
+        </div>
+
+        <!-- Quick Support Actions -->
+        <div class="quick-support" data-aos="fade-up" data-aos-delay="100">
+          <div class="action-item live-chat">
+            <div class="action-content">
+              <i class="bi bi-chat-text"></i>
+              <h4>گفت‌وگوی آنلاین</h4>
+              <p>با تیم پشتیبانی گفت‌وگو کنید</p>
+              <a href="#" class="action-button">شروع گفت‌وگو</a>
+            </div>
+          </div>
+
+          <div class="action-item phone">
+            <div class="action-content">
+              <i class="bi bi-telephone"></i>
+              <h4>با ما تماس بگیرید</h4>
+              <p>پشتیبانی تلفنی شبانه‌روزی</p>
+              <a href="tel:1234567890" class="action-button">09125202919</a>
+            </div>
+          </div>
+
+          <div class="action-item email">
+            <div class="action-content">
+              <i class="bi bi-envelope"></i>
+              <h4>پشتیبانی ایمیلی</h4>
+              <p>از طریق ایمیل پشتیبانی بگیرید</p>
+              <a href="#" class="action-button">ارسال ایمیل</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Help Topics -->
+        <div class="help-categories" data-aos="fade-up" data-aos-delay="200">
+          <h3>موضوعات پرکاربرد راهنما</h3>
+          <div class="category-cards">
+            <a href="#" class="category-card" data-aos="zoom-in" data-aos-delay="100">
+              <span class="icon"><i class="bi bi-box-seam"></i></span>
+              <h5>سفارش‌ها و ارسال</h5>
+              <ul>
+                <li>پیگیری سفارش</li>
+                <li>روش‌های ارسال</li>
+                <li>بازگشت و تعویض کالا</li>
+              </ul>
+              <span class="arrow"><i class="bi bi-arrow-right"></i></span>
+            </a>
+
+            <a href="#" class="category-card" data-aos="zoom-in" data-aos-delay="200">
+              <span class="icon"><i class="bi bi-wallet2"></i></span>
+              <h5>صورتحساب و پرداخت</h5>
+              <ul>
+                <li>روش‌های پرداخت</li>
+                <li>صورتحساب‌ها</li>
+                <li>وضعیت بازپرداخت</li>
+              </ul>
+              <span class="arrow"><i class="bi bi-arrow-right"></i></span>
+            </a>
+
+            <a href="#" class="category-card" data-aos="zoom-in" data-aos-delay="300">
+              <span class="icon"><i class="bi bi-person-gear"></i></span>
+              <h5>تنظیمات حساب</h5>
+              <ul>
+                <li>مدیریت پروفایل</li>
+                <li>بازیابی گذرواژه</li>
+                <li>تنظیمات حریم خصوصی</li>
+              </ul>
+              <span class="arrow"><i class="bi bi-arrow-right"></i></span>
+            </a>
+
+            <a href="#" class="category-card" data-aos="zoom-in" data-aos-delay="400">
+              <span class="icon"><i class="bi bi-shield-check"></i></span>
+              <h5>امنیت</h5>
+              <ul>
+                <li>امنیت حساب</li>
+                <li>احراز هویت دومرحله‌ای</li>
+                <li>سیاست حریم خصوصی</li>
+              </ul>
+              <span class="arrow"><i class="bi bi-arrow-right"></i></span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Self Help -->
+        <div class="self-help" data-aos="fade-up" data-aos-delay="300">
+          <div class="row align-items-center">
+            <div class="col-lg-6">
+              <div class="content-box">
+                <h3>منابع خودیاری</h3>
+                <p class="subtitle">با منابع جامع ما سریع‌تر پاسخ پرسش‌هایتان را پیدا کنید</p>
+                <div class="resource-links">
+                  <a href="#" class="resource-link">
+                    <i class="bi bi-play-circle"></i>
+                    <div class="link-content">
+                      <h6>آموزش‌های ویدیویی</h6>
+                      <p>راهنماهای ویدیویی گام‌به‌گام</p>
+                    </div>
+                  </a>
+                  <a href="#" class="resource-link">
+                    <i class="bi bi-file-text"></i>
+                    <div class="link-content">
+                      <h6>راهنماهای کاربری</h6>
+                      <p>مستندات کامل</p>
+                    </div>
+                  </a>
+                  <a href="#" class="resource-link">
+                    <i class="bi bi-book"></i>
+                    <div class="link-content">
+                      <h6>پایگاه دانش</h6>
+                      <p>مقاله‌ها و آموزش‌ها</p>
+                    </div>
+                  </a>
+                  <a href="#" class="resource-link">
+                    <i class="bi bi-tools"></i>
+                    <div class="link-content">
+                      <h6>عیب‌یابی</h6>
+                      <p>مشکلات رایج و راه‌حل‌ها</p>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="faq-section">
+                <h4>پرسش‌های متداول</h4>
+                <div class="faq-list">
+                  <div class="faq-item">
+                    <h3>
+                      چطور سفارش خود را پیگیری کنم؟
+                      <i class="bi bi-plus faq-toggle"></i>
+                    </h3>
+                    <div class="faq-answer">
+                      <p>برای پیگیری سفارش، شماره سفارش خود را در بخش پیگیری وارد کنید.</p>
+                    </div>
+                  </div>
+
+                  <div class="faq-item">
+                    <h3>
+                      آیا می‌توانم نشانی ارسال را تغییر دهم؟
+                      <i class="bi bi-plus faq-toggle"></i>
+                    </h3>
+                    <div class="faq-answer">
+                      <p>پیش از ارسال کالا، برای تغییر نشانی با پشتیبانی تماس بگیرید.</p>
+                    </div>
+                  </div>
+
+                  <div class="faq-item">
+                    <h3>
+                      چه روش‌های پرداختی را می‌پذیرید؟
+                      <i class="bi bi-plus faq-toggle"></i>
+                    </h3>
+                    <div class="faq-answer">
+                      <p>کارت‌های اعتباری رایج و PayPal پذیرفته می‌شوند.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section><!-- /Support Section -->
+
+  
+{% endblock content %}

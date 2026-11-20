@@ -1,0 +1,790 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_title %}دسته‌بندی محصولات{% endblock %}
+{% block meta_description %}دسته‌بندی‌های محصولات Hydrolalehzar را ببینید و کالای موردنظر خود را پیدا کنید.{% endblock %}
+{% block body_class %}category-page{% endblock %}
+{% block nav_category %} class="active" aria-current="page"{% endblock %}
+
+{% block content %}
+    <!-- Page Title -->
+    <div class="page-title light-background">
+      <div class="container d-lg-flex justify-content-between align-items-center">
+        <h1 class="mb-2 mb-lg-0">دسته‌بندی</h1>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="{% url 'website:index' %}">صفحه اصلی</a></li>
+            <li class="current">دسته‌بندی</li>
+          </ol>
+        </nav>
+      </div>
+    </div><!-- End Page Title -->
+
+    <div class="container">
+      <div class="row">
+
+        <div class="col-lg-4 sidebar">
+
+          <div class="widgets-container">
+
+            <!-- Product Categories Widget -->
+            <div class="product-categories-widget widget-item">
+
+              <h3 class="widget-title">دسته‌بندی‌ها</h3>
+
+              <ul class="category-tree list-unstyled mb-0">
+                <!-- Clothing Category -->
+                <li class="category-item">
+                  <div class="d-flex justify-content-between align-items-center category-header collapsed" data-bs-toggle="collapse" data-bs-target="#categories-1-clothing-subcategories" aria-expanded="false" aria-controls="categories-1-clothing-subcategories">
+                    <a href="javascript:void(0)" class="category-link">پوشاک</a>
+                    <span class="category-toggle">
+                      <i class="bi bi-chevron-down"></i>
+                      <i class="bi bi-chevron-up"></i>
+                    </span>
+                  </div>
+                  <ul id="categories-1-clothing-subcategories" class="subcategory-list list-unstyled collapse ps-3 mt-2">
+                    <li><a href="#" class="subcategory-link">پوشاک مردانه</a></li>
+                    <li><a href="#" class="subcategory-link">پوشاک زنانه</a></li>
+                    <li><a href="#" class="subcategory-link">پوشاک کودک</a></li>
+                    <li><a href="#" class="subcategory-link">اکسسوری</a></li>
+                  </ul>
+                </li>
+
+                <!-- Electronics Category -->
+                <li class="category-item">
+                  <div class="d-flex justify-content-between align-items-center category-header collapsed" data-bs-toggle="collapse" data-bs-target="#categories-1-electronics-subcategories" aria-expanded="false" aria-controls="categories-1-electronics-subcategories">
+                    <a href="javascript:void(0)" class="category-link">لوازم الکترونیکی</a>
+                    <span class="category-toggle">
+                      <i class="bi bi-chevron-down"></i>
+                      <i class="bi bi-chevron-up"></i>
+                    </span>
+                  </div>
+                  <ul id="categories-1-electronics-subcategories" class="subcategory-list list-unstyled collapse ps-3 mt-2">
+                    <li><a href="#" class="subcategory-link">گوشی هوشمند</a></li>
+                    <li><a href="#" class="subcategory-link">لپ‌تاپ</a></li>
+                    <li><a href="#" class="subcategory-link">تبلت</a></li>
+                    <li><a href="#" class="subcategory-link">اکسسوری</a></li>
+                  </ul>
+                </li>
+
+                <!-- Home & Kitchen Category -->
+                <li class="category-item">
+                  <div class="d-flex justify-content-between align-items-center category-header collapsed" data-bs-toggle="collapse" data-bs-target="#categories-1-home-subcategories" aria-expanded="false" aria-controls="categories-1-home-subcategories">
+                    <a href="javascript:void(0)" class="category-link">صفحه اصلی و آشپزصفحه اصلی</a>
+                    <span class="category-toggle">
+                      <i class="bi bi-chevron-down"></i>
+                      <i class="bi bi-chevron-up"></i>
+                    </span>
+                  </div>
+                  <ul id="categories-1-home-subcategories" class="subcategory-list list-unstyled collapse ps-3 mt-2">
+                    <li><a href="#" class="subcategory-link">مبلمان</a></li>
+                    <li><a href="#" class="subcategory-link">لوازم آشپزصفحه اصلی</a></li>
+                    <li><a href="#" class="subcategory-link">لوازم دکوراسیون</a></li>
+                    <li><a href="#" class="subcategory-link">لوازم خواب</a></li>
+                  </ul>
+                </li>
+
+                <!-- Beauty & Personal Care Category -->
+                <li class="category-item">
+                  <div class="d-flex justify-content-between align-items-center category-header collapsed" data-bs-toggle="collapse" data-bs-target="#categories-1-beauty-subcategories" aria-expanded="false" aria-controls="categories-1-beauty-subcategories">
+                    <a href="javascript:void(0)" class="category-link">زیبایی و مراقبت شخصی</a>
+                    <span class="category-toggle">
+                      <i class="bi bi-chevron-down"></i>
+                      <i class="bi bi-chevron-up"></i>
+                    </span>
+                  </div>
+                  <ul id="categories-1-beauty-subcategories" class="subcategory-list list-unstyled collapse ps-3 mt-2">
+                    <li><a href="#" class="subcategory-link">مراقبت از پوست</a></li>
+                    <li><a href="#" class="subcategory-link">آرایش</a></li>
+                    <li><a href="#" class="subcategory-link">مراقبت از مو</a></li>
+                    <li><a href="#" class="subcategory-link">عطر و ادکلن</a></li>
+                  </ul>
+                </li>
+
+                <!-- Sports & Outdoors Category -->
+                <li class="category-item">
+                  <div class="d-flex justify-content-between align-items-center category-header collapsed" data-bs-toggle="collapse" data-bs-target="#categories-1-sports-subcategories" aria-expanded="false" aria-controls="categories-1-sports-subcategories">
+                    <a href="javascript:void(0)" class="category-link">ورزش و فضای باز</a>
+                    <span class="category-toggle">
+                      <i class="bi bi-chevron-down"></i>
+                      <i class="bi bi-chevron-up"></i>
+                    </span>
+                  </div>
+                  <ul id="categories-1-sports-subcategories" class="subcategory-list list-unstyled collapse ps-3 mt-2">
+                    <li><a href="#" class="subcategory-link">تجهیزات ورزشی</a></li>
+                    <li><a href="#" class="subcategory-link">تجهیزات فضای باز</a></li>
+                    <li><a href="#" class="subcategory-link">پوشاک ورزشی</a></li>
+                    <li><a href="#" class="subcategory-link">ورزش‌های گروهی</a></li>
+                  </ul>
+                </li>
+
+                <!-- Books Category (no subcategories) -->
+                <li class="category-item">
+                  <div class="d-flex justify-content-between align-items-center category-header">
+                    <a href="#" class="category-link">کتاب</a>
+                  </div>
+                </li>
+
+                <!-- Toys & Games Category -->
+                <li class="category-item">
+                  <div class="d-flex justify-content-between align-items-center category-header collapsed" data-bs-toggle="collapse" data-bs-target="#categories-1-toys-subcategories" aria-expanded="false" aria-controls="categories-1-toys-subcategories">
+                    <a href="javascript:void(0)" class="category-link">اسباب‌بازی و بازی</a>
+                    <span class="category-toggle">
+                      <i class="bi bi-chevron-down"></i>
+                      <i class="bi bi-chevron-up"></i>
+                    </span>
+                  </div>
+                  <ul id="categories-1-toys-subcategories" class="subcategory-list list-unstyled collapse ps-3 mt-2">
+                    <li><a href="#" class="subcategory-link">بازی‌های رومیزی</a></li>
+                    <li><a href="#" class="subcategory-link">پازل</a></li>
+                    <li><a href="#" class="subcategory-link">اکشن فیگور</a></li>
+                    <li><a href="#" class="subcategory-link">اسباب‌بازی آموزشی</a></li>
+                  </ul>
+                </li>
+              </ul>
+
+            </div><!--/Product Categories Widget -->
+
+            <!-- Pricing Range Widget -->
+            <div class="pricing-range-widget widget-item">
+
+              <h3 class="widget-title">محدوده قیمت</h3>
+
+              <div class="price-range-container">
+                <div class="current-range mb-3">
+                  <span class="min-price">$0</span>
+                  <span class="max-price float-end">$1000</span>
+                </div>
+
+                <div class="range-slider">
+                  <div class="slider-track"></div>
+                  <div class="slider-progress"></div>
+                  <input type="range" class="min-range" min="0" max="1000" value="0" step="10">
+                  <input type="range" class="max-range" min="0" max="1000" value="500" step="10">
+                </div>
+
+                <div class="price-inputs mt-3">
+                  <div class="row g-2">
+                    <div class="col-6">
+                      <div class="input-group input-group-sm">
+                        <span class="input-group-text">$</span>
+                        <input type="number" class="form-control min-price-input" placeholder="حداقل" min="0" max="1000" value="0" step="10">
+                      </div>
+                    </div>
+                    <div class="col-6">
+                      <div class="input-group input-group-sm">
+                        <span class="input-group-text">$</span>
+                        <input type="number" class="form-control max-price-input" placeholder="حداکثر" min="0" max="1000" value="500" step="10">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="filter-actions mt-3">
+                  <button type="button" class="btn btn-sm btn-primary w-100">اعمال فیلتر</button>
+                </div>
+              </div>
+
+            </div><!--/Pricing Range Widget -->
+
+            <!-- Brand Filter Widget -->
+            <h3 class="brand-filter-widget widget-item">فیلتر بر اساس برند</h3><!--/Brand Filter Widget -->
+
+            <!-- Color Filter Widget -->
+            <div class="color-filter-widget widget-item">
+
+              <h3 class="widget-title">فیلتر بر اساس رنگ</h3>
+
+              <div class="color-filter-content">
+                <div class="color-options">
+                  <div class="form-check color-option">
+                    <input class="form-check-input" type="checkbox" value="black" id="color-black">
+                    <label class="form-check-label" for="color-black">
+                      <span class="color-swatch" style="background-color: #000000;" title="مشکی"></span>
+                    </label>
+                  </div>
+
+                  <div class="form-check color-option">
+                    <input class="form-check-input" type="checkbox" value="white" id="color-white">
+                    <label class="form-check-label" for="color-white">
+                      <span class="color-swatch" style="background-color: #ffffff;" title="سفید"></span>
+                    </label>
+                  </div>
+
+                  <div class="form-check color-option">
+                    <input class="form-check-input" type="checkbox" value="red" id="color-red">
+                    <label class="form-check-label" for="color-red">
+                      <span class="color-swatch" style="background-color: #e74c3c;" title="قرمز"></span>
+                    </label>
+                  </div>
+
+                  <div class="form-check color-option">
+                    <input class="form-check-input" type="checkbox" value="blue" id="color-blue">
+                    <label class="form-check-label" for="color-blue">
+                      <span class="color-swatch" style="background-color: #3498db;" title="آبی"></span>
+                    </label>
+                  </div>
+
+                  <div class="form-check color-option">
+                    <input class="form-check-input" type="checkbox" value="green" id="color-green">
+                    <label class="form-check-label" for="color-green">
+                      <span class="color-swatch" style="background-color: #2ecc71;" title="سبز"></span>
+                    </label>
+                  </div>
+
+                  <div class="form-check color-option">
+                    <input class="form-check-input" type="checkbox" value="yellow" id="color-yellow">
+                    <label class="form-check-label" for="color-yellow">
+                      <span class="color-swatch" style="background-color: #f1c40f;" title="زرد"></span>
+                    </label>
+                  </div>
+
+                  <div class="form-check color-option">
+                    <input class="form-check-input" type="checkbox" value="purple" id="color-purple">
+                    <label class="form-check-label" for="color-purple">
+                      <span class="color-swatch" style="background-color: #9b59b6;" title="بنفش"></span>
+                    </label>
+                  </div>
+
+                  <div class="form-check color-option">
+                    <input class="form-check-input" type="checkbox" value="orange" id="color-orange">
+                    <label class="form-check-label" for="color-orange">
+                      <span class="color-swatch" style="background-color: #e67e22;" title="نارنجی"></span>
+                    </label>
+                  </div>
+
+                  <div class="form-check color-option">
+                    <input class="form-check-input" type="checkbox" value="pink" id="color-pink">
+                    <label class="form-check-label" for="color-pink">
+                      <span class="color-swatch" style="background-color: #fd79a8;" title="صورتی"></span>
+                    </label>
+                  </div>
+
+                  <div class="form-check color-option">
+                    <input class="form-check-input" type="checkbox" value="brown" id="color-brown">
+                    <label class="form-check-label" for="color-brown">
+                      <span class="color-swatch" style="background-color: #795548;" title="قهوه‌ای"></span>
+                    </label>
+                  </div>
+                </div>
+
+                <div class="filter-actions mt-3">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">پاک کردن همه</button>
+                  <button type="button" class="btn btn-sm btn-primary">اعمال فیلتر</button>
+                </div>
+              </div>
+
+            </div><!--/Color Filter Widget -->
+
+            <!-- Brand Filter Widget -->
+            <div class="brand-filter-widget widget-item">
+
+              <h3 class="widget-title">فیلتر بر اساس برند</h3>
+
+              <div class="brand-filter-content">
+                <div class="brand-search">
+                  <input type="text" class="form-control" placeholder="جست‌وجوی برندها...">
+                  <i class="bi bi-search"></i>
+                </div>
+
+                <div class="brand-list">
+                  <div class="brand-item">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="brand1">
+                      <label class="form-check-label" for="brand1">
+                        نایکی
+                        <span class="brand-count">(24)</span>
+                      </label>
+                    </div>
+                  </div>
+
+                  <div class="brand-item">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="brand2">
+                      <label class="form-check-label" for="brand2">
+                        آدیداس
+                        <span class="brand-count">(18)</span>
+                      </label>
+                    </div>
+                  </div>
+
+                  <div class="brand-item">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="brand3">
+                      <label class="form-check-label" for="brand3">
+                        پوما
+                        <span class="brand-count">(12)</span>
+                      </label>
+                    </div>
+                  </div>
+
+                  <div class="brand-item">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="brand4">
+                      <label class="form-check-label" for="brand4">
+                        ریبوک
+                        <span class="brand-count">(9)</span>
+                      </label>
+                    </div>
+                  </div>
+
+                  <div class="brand-item">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="brand5">
+                      <label class="form-check-label" for="brand5">
+                        آندر آرمور
+                        <span class="brand-count">(7)</span>
+                      </label>
+                    </div>
+                  </div>
+
+                  <div class="brand-item">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="brand6">
+                      <label class="form-check-label" for="brand6">
+                        نیو بالانس
+                        <span class="brand-count">(6)</span>
+                      </label>
+                    </div>
+                  </div>
+
+                  <div class="brand-item">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="brand7">
+                      <label class="form-check-label" for="brand7">
+                        کانورس
+                        <span class="brand-count">(5)</span>
+                      </label>
+                    </div>
+                  </div>
+
+                  <div class="brand-item">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="brand8">
+                      <label class="form-check-label" for="brand8">
+                        ونس
+                        <span class="brand-count">(4)</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="brand-actions">
+                  <button class="btn btn-sm btn-outline-primary">اعمال فیلتر</button>
+                  <button class="btn btn-sm btn-link">پاک کردن همه</button>
+                </div>
+              </div>
+
+            </div><!--/Brand Filter Widget -->
+
+          </div>
+
+        </div>
+
+        <div class="col-lg-8">
+
+          <!-- Category Header Section -->
+          <section id="category-header" class="category-header section">
+
+            <div class="container" data-aos="fade-up">
+
+              <!-- Filter and Sort Options -->
+              <div class="filter-container mb-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="row g-3">
+                  <div class="col-12 col-md-6 col-lg-4">
+                    <div class="filter-item search-form">
+                      <label for="productSearch" class="form-label">جست‌وجوی محصولات</label>
+                      <div class="input-group">
+                        <input type="text" class="form-control" id="productSearch" placeholder="جست‌وجوی محصولات..." aria-label="جست‌وجوی محصولات">
+                        <button class="btn search-btn" type="button">
+                          <i class="bi bi-search"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-12 col-md-6 col-lg-2">
+                    <div class="filter-item">
+                      <label for="priceRange" class="form-label">محدوده قیمت</label>
+                      <select class="form-select" id="priceRange">
+                        <option selected="">همه قیمت‌ها</option>
+                        <option>کمتر از ۲۵ دلار</option>
+                        <option>$25 to $50</option>
+                        <option>$50 to $100</option>
+                        <option>$100 to $200</option>
+                        <option>۲۰۰ دلار و بیشتر</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="col-12 col-md-6 col-lg-2">
+                    <div class="filter-item">
+                      <label for="sortBy" class="form-label">مرتب‌سازی بر اساس</label>
+                      <select class="form-select" id="sortBy">
+                        <option selected="">منتخب</option>
+                        <option>قیمت: از کم به زیاد</option>
+                        <option>قیمت: از زیاد به کم</option>
+                        <option>امتیاز مشتریان</option>
+                        <option>جدیدترین‌ها</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="col-12 col-md-6 col-lg-4">
+                    <div class="filter-item">
+                      <label class="form-label">نمایش</label>
+                      <div class="d-flex align-items-center">
+                        <div class="view-options me-3">
+                          <button type="button" class="btn view-btn active" data-view="grid" aria-label="نمای شبکه‌ای">
+                            <i class="bi bi-grid-3x3-gap-fill"></i>
+                          </button>
+                          <button type="button" class="btn view-btn" data-view="list" aria-label="نمای فهرستی">
+                            <i class="bi bi-list-ul"></i>
+                          </button>
+                        </div>
+                        <div class="items-per-page">
+                          <select class="form-select" id="itemsPerPage" aria-label="تعداد در هر صفحه">
+                            <option value="12">۱۲ مورد در هر صفحه</option>
+                            <option value="24">۲۴ مورد در هر صفحه</option>
+                            <option value="48">۴۸ مورد در هر صفحه</option>
+                            <option value="96">۹۶ مورد در هر صفحه</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row mt-3">
+                  <div class="col-12" data-aos="fade-up" data-aos-delay="200">
+                    <div class="active-filters">
+                      <span class="active-filter-label">فیلترهای فعال:</span>
+                      <div class="filter-tags">
+                        <span class="filter-tag">
+                          لوازم الکترونیکی <button class="filter-remove"><i class="bi bi-x"></i></button>
+                        </span>
+                        <span class="filter-tag">
+                          $50 to $100 <button class="filter-remove"><i class="bi bi-x"></i></button>
+                        </span>
+                        <button class="clear-all-btn">پاک کردن همه</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+
+          </section><!-- /Category Header Section -->
+
+          <!-- Category Product List Section -->
+          <section id="category-product-list" class="category-product-list section">
+
+            <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+              <div class="row g-4">
+                <!-- Product 1 -->
+                <div class="col-6 col-xl-4">
+                  <div class="product-card" data-aos="zoom-in">
+                    <div class="product-image">
+                      <img src="{% static 'assets/img/person/person-1.webp' %}" class="main-image img-fluid" alt="محصول">
+                      <img src="{% static 'assets/img/person/person-2.webp' %}" class="hover-image img-fluid" alt="تنوع محصول">
+                      <div class="product-overlay">
+                        <div class="product-actions">
+                          <button type="button" class="action-btn" data-bs-toggle="tooltip" title="مشاهده سریع">
+                            <i class="bi bi-eye"></i>
+                          </button>
+                          <button type="button" class="action-btn" data-bs-toggle="tooltip" title="افزودن به سبد خرید">
+                            <i class="bi bi-cart-plus"></i>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="product-details">
+                      <div class="product-category">مد زنانه</div>
+                      <h4 class="product-title"><a href="{% url 'catalog:product-details' %}">محصول روز</a></h4>
+                      <div class="product-meta">
+                        <div class="product-price">$129.00</div>
+                        <div class="product-rating">
+                          <i class="bi bi-star-fill"></i>
+                          4.8 <span>(42)</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="col-6 col-xl-4">
+                  <div class="product-card" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="product-image">
+                      <img src="{% static 'assets/img/person/person-1.webp' %}" class="main-image img-fluid" alt="محصول">
+                      <img src="{% static 'assets/img/person/person-2.webp' %}" class="hover-image img-fluid" alt="تنوع محصول">
+                      <div class="product-overlay">
+                        <div class="product-actions">
+                          <button type="button" class="action-btn" data-bs-toggle="tooltip" title="مشاهده سریع">
+                            <i class="bi bi-eye"></i>
+                          </button>
+                          <button type="button" class="action-btn" data-bs-toggle="tooltip" title="افزودن به سبد خرید">
+                            <i class="bi bi-cart-plus"></i>
+                          </button>
+                        </div>
+                      </div>
+                      <div class="product-badge new">جدید</div>
+                    </div>
+                    <div class="product-details">
+                      <div class="product-category">مجموعه مردانه</div>
+                      <h4 class="product-title"><a href="{% url 'catalog:product-details' %}">محصول کاربردی</a></h4>
+                      <div class="product-meta">
+                        <div class="product-price">$95.00</div>
+                        <div class="product-rating">
+                          <i class="bi bi-star-fill"></i>
+                          4.6 <span>(28)</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="col-6 col-xl-4">
+                  <div class="product-card" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="product-image">
+                      <img src="{% static 'assets/img/person/person-3.webp' %}" class="main-image img-fluid" alt="محصول">
+                      <img src="{% static 'assets/img/person/person-4.webp' %}" class="hover-image img-fluid" alt="تنوع محصول">
+                      <div class="product-overlay">
+                        <div class="product-actions">
+                          <button type="button" class="action-btn" data-bs-toggle="tooltip" title="مشاهده سریع">
+                            <i class="bi bi-eye"></i>
+                          </button>
+                          <button type="button" class="action-btn" data-bs-toggle="tooltip" title="افزودن به سبد خرید">
+                            <i class="bi bi-cart-plus"></i>
+                          </button>
+                        </div>
+                      </div>
+                      <div class="product-badge sale">-25%</div>
+                    </div>
+                    <div class="product-details">
+                      <div class="product-category">اکسسوری</div>
+                      <h4 class="product-title"><a href="{% url 'catalog:product-details' %}">محصول ویژه</a></h4>
+                      <div class="product-meta">
+                        <div class="product-price">
+                          $75.00
+                          <span class="original-price">$99.00</span>
+                        </div>
+                        <div class="product-rating">
+                          <i class="bi bi-star-fill"></i>
+                          4.9 <span>(56)</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="col-6 col-xl-4">
+                  <div class="product-card" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="product-image">
+                      <img src="{% static 'assets/img/person/person-3.webp' %}" class="main-image img-fluid" alt="محصول">
+                      <img src="{% static 'assets/img/person/person-4.webp' %}" class="hover-image img-fluid" alt="تنوع محصول">
+                      <div class="product-overlay">
+                        <div class="product-actions">
+                          <button type="button" class="action-btn" data-bs-toggle="tooltip" title="مشاهده سریع">
+                            <i class="bi bi-eye"></i>
+                          </button>
+                          <button type="button" class="action-btn" data-bs-toggle="tooltip" title="افزودن به سبد خرید">
+                            <i class="bi bi-cart-plus"></i>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="product-details">
+                      <div class="product-category">کفش</div>
+                      <h4 class="product-title"><a href="{% url 'catalog:product-details' %}">محصول باکیفیت</a></h4>
+                      <div class="product-meta">
+                        <div class="product-price">$145.00</div>
+                        <div class="product-rating">
+                          <i class="bi bi-star-fill"></i>
+                          4.7 <span>(35)</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Product 5 -->
+                <div class="col-6 col-xl-4">
+                  <div class="product-card" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="product-image">
+                      <img src="{% static 'assets/img/person/person-5.webp' %}" class="main-image img-fluid" alt="محصول">
+                      <img src="{% static 'assets/img/person/person-6.webp' %}" class="hover-image img-fluid" alt="تنوع محصول">
+                      <div class="product-overlay">
+                        <div class="product-actions">
+                          <button type="button" class="action-btn" data-bs-toggle="tooltip" title="مشاهده سریع">
+                            <i class="bi bi-eye"></i>
+                          </button>
+                          <button type="button" class="action-btn" data-bs-toggle="tooltip" title="افزودن به سبد خرید">
+                            <i class="bi bi-cart-plus"></i>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="product-details">
+                      <div class="product-category">مد مردانه</div>
+                      <h4 class="product-title"><a href="{% url 'catalog:product-details' %}">محصول جدید</a></h4>
+                      <div class="product-meta">
+                        <div class="product-price">$89.00</div>
+                        <div class="product-rating">
+                          <i class="bi bi-star-fill"></i>
+                          4.5 <span>(23)</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Product 6 -->
+                <div class="col-6 col-xl-4">
+                  <div class="product-card" data-aos="zoom-in" data-aos-delay="500">
+                    <div class="product-image">
+                      <img src="{% static 'assets/img/person/person-5.webp' %}" class="main-image img-fluid" alt="محصول">
+                      <img src="{% static 'assets/img/person/person-6.webp' %}" class="hover-image img-fluid" alt="تنوع محصول">
+                      <div class="product-overlay">
+                        <div class="product-actions">
+                          <button type="button" class="action-btn" data-bs-toggle="tooltip" title="مشاهده سریع">
+                            <i class="bi bi-eye"></i>
+                          </button>
+                          <button type="button" class="action-btn" data-bs-toggle="tooltip" title="افزودن به سبد خرید">
+                            <i class="bi bi-cart-plus"></i>
+                          </button>
+                        </div>
+                      </div>
+                      <div class="product-badge sale">-15%</div>
+                    </div>
+                    <div class="product-details">
+                      <div class="product-category">مد زنانه</div>
+                      <h4 class="product-title"><a href="{% url 'catalog:product-details' %}">محصول محبوب</a></h4>
+                      <div class="product-meta">
+                        <div class="product-price">
+                          $110.00
+                          <span class="original-price">$129.00</span>
+                        </div>
+                        <div class="product-rating">
+                          <i class="bi bi-star-fill"></i>
+                          4.8 <span>(47)</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Product 7 -->
+                <div class="col-6 col-xl-4">
+                  <div class="product-card" data-aos="zoom-in" data-aos-delay="600">
+                    <div class="product-image">
+                      <img src="{% static 'assets/img/person/person-7.webp' %}" class="main-image img-fluid" alt="محصول">
+                      <img src="{% static 'assets/img/person/person-8.webp' %}" class="hover-image img-fluid" alt="تنوع محصول">
+                      <div class="product-overlay">
+                        <div class="product-actions">
+                          <button type="button" class="action-btn" data-bs-toggle="tooltip" title="مشاهده سریع">
+                            <i class="bi bi-eye"></i>
+                          </button>
+                          <button type="button" class="action-btn" data-bs-toggle="tooltip" title="افزودن به سبد خرید">
+                            <i class="bi bi-cart-plus"></i>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="product-details">
+                      <div class="product-category">اکسسوری</div>
+                      <h4 class="product-title"><a href="{% url 'catalog:product-details' %}">محصول پیشنهادی</a></h4>
+                      <div class="product-meta">
+                        <div class="product-price">$55.00</div>
+                        <div class="product-rating">
+                          <i class="bi bi-star-fill"></i>
+                          4.6 <span>(31)</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Product 8 -->
+                <div class="col-6 col-xl-4">
+                  <div class="product-card" data-aos="zoom-in" data-aos-delay="700">
+                    <div class="product-image">
+                      <img src="{% static 'assets/img/person/person-7.webp' %}" class="main-image img-fluid" alt="محصول">
+                      <img src="{% static 'assets/img/person/person-8.webp' %}" class="hover-image img-fluid" alt="تنوع محصول">
+                      <div class="product-overlay">
+                        <div class="product-actions">
+                          <button type="button" class="action-btn" data-bs-toggle="tooltip" title="مشاهده سریع">
+                            <i class="bi bi-eye"></i>
+                          </button>
+                          <button type="button" class="action-btn" data-bs-toggle="tooltip" title="افزودن به سبد خرید">
+                            <i class="bi bi-cart-plus"></i>
+                          </button>
+                        </div>
+                      </div>
+                      <div class="product-badge new">جدید</div>
+                    </div>
+                    <div class="product-details">
+                      <div class="product-category">مد مردانه</div>
+                      <h4 class="product-title"><a href="{% url 'catalog:product-details' %}">محصول پرفروش</a></h4>
+                      <div class="product-meta">
+                        <div class="product-price">$79.00</div>
+                        <div class="product-rating">
+                          <i class="bi bi-star-fill"></i>
+                          4.7 <span>(39)</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+
+          </section><!-- /Category Product List Section -->
+
+          <!-- Category Pagination Section -->
+          <section id="category-pagination" class="category-pagination section">
+
+            <div class="container">
+              <nav class="d-flex justify-content-center" aria-label="پیمایش صفحات">
+                <ul>
+                  <li>
+                    <a href="#" aria-label="صفحه قبلی">
+                      <i class="bi bi-arrow-left"></i>
+                      <span class="d-none d-sm-inline">قبلی</span>
+                    </a>
+                  </li>
+
+                  <li><a href="#" class="active">1</a></li>
+                  <li><a href="#">2</a></li>
+                  <li><a href="#">3</a></li>
+                  <li class="ellipsis">...</li>
+                  <li><a href="#">8</a></li>
+                  <li><a href="#">9</a></li>
+                  <li><a href="#">10</a></li>
+
+                  <li>
+                    <a href="#" aria-label="صفحه بعدی">
+                      <span class="d-none d-sm-inline">بعدی</span>
+                      <i class="bi bi-arrow-right"></i>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+
+          </section><!-- /Category Pagination Section -->
+
+        </div>
+
+      </div>
+    </div>
+
+  
+{% endblock content %}

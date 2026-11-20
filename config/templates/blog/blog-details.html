@@ -1,0 +1,443 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_title %}جزئیات وبلاگ{% endblock %}
+{% block meta_description %}راهنمای توسعه وب مدرن، روش‌های برتر و روندهای مهم سال ۲۰۲۵ را در وبلاگ Hydrolalehzar بخوانید.{% endblock %}
+{% block og_type %}article{% endblock %}
+{% block body_class %}index-page{% endblock %}
+{% block nav_blog %} class="active" aria-current="page"{% endblock %}
+
+{% block content %}
+        <!-- Page Title -->
+    <div class="page-title light-background">
+      <div class="container d-lg-flex justify-content-between align-items-center">
+        <h1 class="mb-2 mb-lg-0">جزئیات وبلاگ</h1>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="{% url 'website:index' %}">صفحه اصلی</a></li>
+            <li><a href="{% url 'blog:blog' %}">وبلاگ</a></li>
+            <li class="current">جزئیات وبلاگ</li>
+          </ol>
+        </nav>
+      </div>
+    </div><!-- End Page Title -->
+
+    <!-- Blog Details Section -->
+    <section id="blog-details" class="blog-details section">
+      <div class="container" data-aos="fade-up">
+
+        <article class="article">
+
+          <div class="hero-img" data-aos="zoom-in">
+            <img src="{% static 'assets/img/person/person-3.webp' %}" alt="تصویر اصلی مقاله" class="img-fluid" loading="lazy">
+            <div class="meta-overlay">
+              <div class="meta-categories">
+                <a href="#" class="category">توسعه وب</a>
+                <span class="divider">•</span>
+                <span class="reading-time"><i class="bi bi-clock"></i> ۶ دقیقه مطالعه</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="article-content" data-aos="fade-up" data-aos-delay="100">
+            <div class="content-header">
+              <h1 class="title">توسعه وب مدرن: روش‌های برتر و روندهای پیش رو در سال ۲۰۲۵</h1>
+
+              <div class="author-info">
+                <div class="author-details">
+                  <img src="{% static 'assets/img/person/person-8.webp' %}" alt="نویسنده" class="author-img">
+                  <div class="info">
+                    <h4>مایکل چن</h4>
+                    <span class="role">توسعه‌دهنده ارشد وب</span>
+                  </div>
+                </div>
+                <div class="post-meta">
+                  <span class="date"><i class="bi bi-calendar3"></i> ۱۵ مارس ۲۰۲۵</span>
+                  <span class="divider">•</span>
+                  <span class="comments"><i class="bi bi-chat-text"></i> ۱۸ دیدگاه</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="content">
+              <p class="lead">
+                دنیای توسعه وب با سرعتی چشمگیر در حال تغییر است. فناوری‌ها، چارچوب‌ها و روش‌های تازه، شیوه ساخت برنامه‌های وب امروزی را دگرگون می‌کنند.
+              </p>
+
+              <p>
+                در سال ۲۰۲۵، اکوسیستم توسعه وب با رویکردهای نوآورانه‌ای برای ساخت تجربه‌هایی سریع‌تر، امن‌تر و جذاب‌تر دگرگون شده است. در این راهنما، تازه‌ترین روندها و روش‌های برتر شکل‌دهنده آینده توسعه وب را مرور می‌کنیم.
+              </p>
+
+              <div class="content-image right-aligned">
+                <img src="{% static 'assets/img/person/person-2.webp' %}" class="img-fluid" alt="ابزارهای توسعه وب مدرن" loading="lazy">
+                <figcaption>محیط‌های توسعه مدرن بر همکاری و بهره‌وری تأکید دارند</figcaption>
+              </div>
+
+              <h2>رشد کامپوننت‌های وب</h2>
+              <p>
+                کامپوننت‌های وب به بخش مهمی از توسعه مدرن تبدیل شده‌اند و روشی استاندارد برای ساخت اجزای سفارشی و قابل استفاده مجدد فراهم می‌کنند. مهم‌ترین مزیت‌های آن‌ها عبارت‌اند از:
+              </p>
+              <ul>
+                <li>استفاده مجدد آسان‌تر از کد در چارچوب‌های مختلف</li>
+                <li>جداسازی بهتر عملکرد اجزا</li>
+                <li>نگه‌داری ساده‌تر و مقیاس‌پذیری بیشتر</li>
+                <li>ساخت کامپوننت‌هایی مستقل از چارچوب</li>
+              </ul>
+
+              <div class="highlight-box">
+                <h3>روندهای کلیدی سال ۲۰۲۵</h3>
+                <ul class="trend-list">
+                  <li>
+                    <i class="bi bi-lightning-charge"></i>
+                    <span>رایانش لبه‌ای و معماری بدون سرور</span>
+                  </li>
+                  <li>
+                    <i class="bi bi-shield-check"></i>
+                    <span>راهکارهای امنیتی پیشرفته‌تر</span>
+                  </li>
+                  <li>
+                    <i class="bi bi-phone"></i>
+                    <span>برنامه‌های وب پیش‌رونده (PWA)</span>
+                  </li>
+                </ul>
+              </div>
+
+              <h2>بهینه‌سازی عملکرد</h2>
+              <p>
+                عملکرد همچنان از عوامل کلیدی در توسعه وب است. توجه به شاخص‌های Core Web Vitals و معیارهای تجربه کاربری بیشتر شده و برنامه‌های مدرن باید از نظر سرعت و بهره‌وری بهینه باشند.
+              </p>
+
+              <blockquote>
+                <p>
+                  «آینده توسعه وب فقط به نوشتن کد محدود نمی‌شود؛ بلکه ساخت تجربه‌هایی روان، دسترس‌پذیر و سریع برای همه، در هر جاست.»
+                </p>
+                <cite>امیلی تامپسون، معمار عملکرد وب</cite>
+              </blockquote>
+
+              <div class="content-grid">
+                <div class="row g-4">
+                  <div class="col-md-6">
+                    <div class="info-card">
+                      <i class="bi bi-speedometer2"></i>
+                      <h4>معیارهای عملکرد</h4>
+                      <p>برای بهبود جایگاه در نتایج جست‌وجو و تجربه کاربری، بر Core Web Vitals و معیارهای عملکرد کاربرمحور تمرکز کنید.</p>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="info-card">
+                      <i class="bi bi-universal-access"></i>
+                      <h4>دسترس‌پذیری</h4>
+                      <p>با اجرای دستورالعمل‌های WCAG، دسترسی همه کاربران به برنامه‌های وب را در دستگاه‌های مختلف فراهم کنید.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <h2>نگاهی به آینده</h2>
+              <p>
+                در ادامه سال ۲۰۲۵، روش‌های توسعه وب باز هم تغییر می‌کنند و فناوری‌های تازه را در کنار پایه‌های محکم عملکرد، دسترس‌پذیری و تجربه کاربری به کار می‌گیرند. آشنایی با این روندها برای ساخت برنامه‌های مدرن و مقیاس‌پذیر اهمیت دارد.
+              </p>
+            </div>
+
+            <div class="meta-bottom">
+              <div class="tags-section">
+                <h4>موضوعات مرتبط</h4>
+                <div class="tags">
+                  <a href="#" class="tag">توسعه وب</a>
+                  <a href="#" class="tag">عملکرد</a>
+                  <a href="#" class="tag">روش‌های برتر</a>
+                  <a href="#" class="tag">روندها</a>
+                  <a href="#" class="tag">2025</a>
+                </div>
+              </div>
+
+              <div class="share-section">
+                <h4>اشتراک‌گذاری مقاله</h4>
+                <div class="social-links">
+                  <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
+                  <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+                  <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+                  <a href="#" class="copy-link" title="کپی پیوند"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </article>
+
+      </div>
+    </section><!-- /Blog Details Section -->
+
+    <!-- Blog Comments Section -->
+    <section id="blog-comments" class="blog-comments section">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="blog-comments-4">
+          <div class="comments-header">
+            <h3 class="title">دیدگاه‌های کاربران</h3>
+            <div class="comments-stats">
+              <span class="count">12</span>
+              <span class="label">دیدگاه‌ها</span>
+            </div>
+          </div>
+
+          <div class="comments-container">
+            <!-- Comment #1 -->
+            <div class="comment-thread">
+              <div class="comment-box">
+                <div class="comment-wrapper">
+                  <div class="avatar-wrapper">
+                    <img src="{% static 'assets/img/person/person-9.webp' %}" alt="تصویر نمایه" loading="lazy">
+                    <span class="status-indicator"></span>
+                  </div>
+
+                  <div class="comment-content">
+                    <div class="comment-header">
+                      <div class="user-info">
+                        <h4>توماس اندرسون</h4>
+                        <span class="time-badge">
+                          <i class="bi bi-clock"></i>
+                          ۲ ساعت پیش
+                        </span>
+                      </div>
+                      <div class="engagement">
+                        <span class="likes">
+                          <i class="bi bi-heart"></i>
+                          24
+                        </span>
+                      </div>
+                    </div>
+
+                    <div class="comment-body">
+                      <p>مقاله مفیدی بود؛ به‌ویژه بخش مربوط به کامپوننت‌های قابل استفاده مجدد.</p>
+                    </div>
+
+                    <div class="comment-actions">
+                      <button class="action-btn like-btn" aria-label="پسندیدن دیدگاه">
+                        <i class="bi bi-heart"></i>
+                        <span>پسندیدن</span>
+                      </button>
+                      <button class="action-btn reply-btn" aria-label="پاسخ به دیدگاه">
+                        <i class="bi bi-chat"></i>
+                        <span>پاسخ</span>
+                      </button>
+                      <button class="action-btn share-btn" aria-label="اشتراک‌گذاری دیدگاه">
+                        <i class="bi bi-share"></i>
+                        <span>اشتراک‌گذاری</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Replies Container -->
+              <div class="replies-container">
+                <!-- Reply #1 -->
+                <div class="comment-box reply">
+                  <div class="comment-wrapper">
+                    <div class="avatar-wrapper">
+                      <img src="{% static 'assets/img/person/person-9.webp' %}" alt="تصویر نمایه" loading="lazy">
+                      <span class="status-indicator"></span>
+                    </div>
+
+                    <div class="comment-content">
+                      <div class="comment-header">
+                        <div class="user-info">
+                          <h4>ماریا رودریگز</h4>
+                          <span class="time-badge">
+                            <i class="bi bi-clock"></i>
+                            ۱ ساعت پیش
+                          </span>
+                        </div>
+                        <div class="engagement">
+                          <span class="likes">
+                            <i class="bi bi-heart"></i>
+                            8
+                          </span>
+                        </div>
+                      </div>
+
+                      <div class="comment-body">
+                        <p>نکته‌های مربوط به دسترس‌پذیری برایم بسیار کاربردی بود.</p>
+                      </div>
+
+                      <div class="comment-actions">
+                        <button class="action-btn like-btn" aria-label="پسندیدن دیدگاه">
+                          <i class="bi bi-heart"></i>
+                          <span>پسندیدن</span>
+                        </button>
+                        <button class="action-btn reply-btn" aria-label="پاسخ به دیدگاه">
+                          <i class="bi bi-chat"></i>
+                          <span>پاسخ</span>
+                        </button>
+                        <button class="action-btn share-btn" aria-label="اشتراک‌گذاری دیدگاه">
+                          <i class="bi bi-share"></i>
+                          <span>اشتراک‌گذاری</span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Reply #2 -->
+                <div class="comment-box reply">
+                  <div class="comment-wrapper">
+                    <div class="avatar-wrapper">
+                      <img src="{% static 'assets/img/person/person-9.webp' %}" alt="تصویر نمایه" loading="lazy">
+                      <span class="status-indicator"></span>
+                    </div>
+
+                    <div class="comment-content">
+                      <div class="comment-header">
+                        <div class="user-info">
+                          <h4>الکس چن</h4>
+                          <span class="time-badge">
+                            <i class="bi bi-clock"></i>
+                            ۳۰ دقیقه پیش
+                          </span>
+                        </div>
+                        <div class="engagement">
+                          <span class="likes">
+                            <i class="bi bi-heart"></i>
+                            5
+                          </span>
+                        </div>
+                      </div>
+
+                      <div class="comment-body">
+                        <p>ممنون از توضیحات روشن و جمع‌بندی خوب.</p>
+                      </div>
+
+                      <div class="comment-actions">
+                        <button class="action-btn like-btn" aria-label="پسندیدن دیدگاه">
+                          <i class="bi bi-heart"></i>
+                          <span>پسندیدن</span>
+                        </button>
+                        <button class="action-btn reply-btn" aria-label="پاسخ به دیدگاه">
+                          <i class="bi bi-chat"></i>
+                          <span>پاسخ</span>
+                        </button>
+                        <button class="action-btn share-btn" aria-label="اشتراک‌گذاری دیدگاه">
+                          <i class="bi bi-share"></i>
+                          <span>اشتراک‌گذاری</span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Comment #2 -->
+            <div class="comment-thread">
+              <div class="comment-box">
+                <div class="comment-wrapper">
+                  <div class="avatar-wrapper">
+                    <img src="{% static 'assets/img/person/person-7.webp' %}" alt="تصویر نمایه" loading="lazy">
+                    <span class="status-indicator"></span>
+                  </div>
+
+                  <div class="comment-content">
+                    <div class="comment-header">
+                      <div class="user-info">
+                        <h4>امیلی واتسون</h4>
+                        <span class="time-badge">
+                          <i class="bi bi-clock"></i>
+                          ۳ ساعت پیش
+                        </span>
+                      </div>
+                      <div class="engagement">
+                        <span class="likes">
+                          <i class="bi bi-heart"></i>
+                          15
+                        </span>
+                      </div>
+                    </div>
+
+                    <div class="comment-body">
+                      <p>مطالب به‌روز و خواندنی بود. مشتاقم نوشته‌های بعدی را هم بخوانم.</p>
+                    </div>
+
+                    <div class="comment-actions">
+                      <button class="action-btn like-btn" aria-label="پسندیدن دیدگاه">
+                        <i class="bi bi-heart"></i>
+                        <span>پسندیدن</span>
+                      </button>
+                      <button class="action-btn reply-btn" aria-label="پاسخ به دیدگاه">
+                        <i class="bi bi-chat"></i>
+                        <span>پاسخ</span>
+                      </button>
+                      <button class="action-btn share-btn" aria-label="اشتراک‌گذاری دیدگاه">
+                        <i class="bi bi-share"></i>
+                        <span>اشتراک‌گذاری</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section><!-- /Blog Comments Section -->
+
+    <!-- Blog Comment Form Section -->
+    <section id="blog-comment-form" class="blog-comment-form section">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <form method="post" role="form">
+
+          <div class="form-header">
+            <h3>ارسال دیدگاه</h3>
+            <p>نشانی ایمیل شما منتشر نخواهد شد. فیلدهای ستاره‌دار الزامی هستند.</p>
+          </div>
+
+          <div class="row gy-3">
+            <div class="col-md-6">
+              <div class="input-group">
+                <label for="name">نام و نام خانوادگی *</label>
+                <input type="text" name="name" id="name" placeholder="نام و نام خانوادگی خود را وارد کنید" required="">
+                <span class="error-text">لطفاً نام خود را وارد کنید</span>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="input-group">
+                <label for="email">نشانی ایمیل *</label>
+                <input type="email" name="email" id="email" placeholder="نشانی ایمیل خود را وارد کنید" required="">
+                <span class="error-text">لطفاً نشانی ایمیل معتبری وارد کنید</span>
+              </div>
+            </div>
+
+            <div class="col-12">
+              <div class="input-group">
+                <label for="website">وب‌سایت</label>
+                <input type="url" name="website" id="website" placeholder="وب‌سایت شما (اختیاری)">
+              </div>
+            </div>
+
+            <div class="col-12">
+              <div class="input-group">
+                <label for="comment">دیدگاه شما *</label>
+                <textarea name="comment" id="comment" rows="5" placeholder="دیدگاه خود را بنویسید..." required=""></textarea>
+                <span class="error-text">لطفاً دیدگاه خود را بنویسید</span>
+              </div>
+            </div>
+
+            <div class="col-12 text-center">
+              <button type="submit">ارسال دیدگاه</button>
+            </div>
+          </div>
+
+        </form>
+
+      </div>
+
+    </section><!-- /Blog Comment Form Section -->
+
+  
+{% endblock content %}

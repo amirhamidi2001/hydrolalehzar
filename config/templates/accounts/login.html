@@ -1,0 +1,173 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_title %}ورود{% endblock %}
+{% block meta_description %}برای دسترسی به حساب کاربری خود در Hydrolalehzar وارد شوید.{% endblock %}
+{% block robots %}noindex, follow{% endblock %}
+{% block body_class %}login-page{% endblock %}
+
+{% block content %}
+    <!-- Page Title -->
+    <div class="page-title light-background">
+      <div class="container d-lg-flex justify-content-between align-items-center">
+        <h1 class="mb-2 mb-lg-0">ورود</h1>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="{% url 'website:index' %}">صفحه اصلی</a></li>
+            <li class="current">ورود</li>
+          </ol>
+        </nav>
+      </div>
+    </div><!-- End Page Title -->
+
+    <!-- Login Section -->
+    <section id="login" class="login section">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row justify-content-center">
+          <div class="col-lg-8 col-md-10">
+            <div class="auth-container" data-aos="fade-in" data-aos-delay="200">
+
+              <!-- Login Form -->
+              <div class="auth-form login-form active">
+                <div class="form-header">
+                  <h3>خوش آمدید</h3>
+                  <p>وارد حساب کاربری خود شوید</p>
+                </div>
+
+                <form class="auth-form-content">
+                  <div class="input-group mb-3">
+                    <span class="input-icon">
+                      <i class="bi bi-envelope"></i>
+                    </span>
+                    <input type="email" class="form-control" placeholder="نشانی ایمیل" required="" autocomplete="email">
+                  </div>
+
+                  <div class="input-group mb-3">
+                    <span class="input-icon">
+                      <i class="bi bi-lock"></i>
+                    </span>
+                    <input type="password" class="form-control" placeholder="گذرواژه" required="" autocomplete="current-password">
+                    <span class="password-toggle">
+                      <i class="bi bi-eye"></i>
+                    </span>
+                  </div>
+
+                  <div class="form-options mb-4">
+                    <div class="remember-me">
+                      <input type="checkbox" id="rememberLogin">
+                      <label for="rememberLogin">مرا به خاطر بسپار</label>
+                    </div>
+                    <a href="#" class="forgot-password">گذرواژه را فراموش کرده‌اید؟</a>
+                  </div>
+
+                  <button type="submit" class="auth-btn primary-btn mb-3">
+                    ورود
+                    <i class="bi bi-arrow-right"></i>
+                  </button>
+
+                  <div class="divider">
+                    <span>or</span>
+                  </div>
+
+                  <button type="button" class="auth-btn social-btn">
+                    <i class="bi bi-google"></i>
+                    ادامه با Google
+                  </button>
+
+                  <div class="switch-form">
+                    <span>حساب کاربری ندارید؟</span>
+                    <button type="button" class="switch-btn" data-target="register">ایجاد حساب کاربری</button>
+                  </div>
+                </form>
+              </div>
+
+              <!-- Register Form -->
+              <div class="auth-form register-form">
+                <div class="form-header">
+                  <h3>ایجاد حساب کاربری</h3>
+                  <p>همین امروز به ما بپیوندید و شروع کنید</p>
+                </div>
+
+                <form class="auth-form-content">
+                  <div class="name-row">
+                    <div class="input-group">
+                      <span class="input-icon">
+                        <i class="bi bi-person"></i>
+                      </span>
+                      <input type="text" class="form-control" placeholder="نام" required="" autocomplete="given-name">
+                    </div>
+                    <div class="input-group">
+                      <span class="input-icon">
+                        <i class="bi bi-person"></i>
+                      </span>
+                      <input type="text" class="form-control" placeholder="نام خانوادگی" required="" autocomplete="family-name">
+                    </div>
+                  </div>
+
+                  <div class="input-group mb-3">
+                    <span class="input-icon">
+                      <i class="bi bi-envelope"></i>
+                    </span>
+                    <input type="email" class="form-control" placeholder="نشانی ایمیل" required="" autocomplete="email">
+                  </div>
+
+                  <div class="input-group mb-3">
+                    <span class="input-icon">
+                      <i class="bi bi-lock"></i>
+                    </span>
+                    <input type="password" class="form-control" placeholder="ایجاد گذرواژه" required="" autocomplete="new-password">
+                    <span class="password-toggle">
+                      <i class="bi bi-eye"></i>
+                    </span>
+                  </div>
+
+                  <div class="input-group mb-3">
+                    <span class="input-icon">
+                      <i class="bi bi-lock-fill"></i>
+                    </span>
+                    <input type="password" class="form-control" placeholder="تکرار گذرواژه" required="" autocomplete="new-password">
+                    <span class="password-toggle">
+                      <i class="bi bi-eye"></i>
+                    </span>
+                  </div>
+
+                  <div class="terms-check mb-4">
+                    <input type="checkbox" id="termsRegister" required="">
+                    <label for="termsRegister">
+                      با این موارد موافقم: <a href="#">شرایط استفاده از خدمات</a> و <a href="#">سیاست حریم خصوصی</a>
+                    </label>
+                  </div>
+
+                  <button type="submit" class="auth-btn primary-btn mb-3">
+                    ایجاد حساب کاربری
+                    <i class="bi bi-arrow-right"></i>
+                  </button>
+
+                  <div class="divider">
+                    <span>or</span>
+                  </div>
+
+                  <button type="button" class="auth-btn social-btn">
+                    <i class="bi bi-google"></i>
+                    ثبت‌نام با Google
+                  </button>
+
+                  <div class="switch-form">
+                    <span>از قبل حساب کاربری دارید؟</span>
+                    <button type="button" class="switch-btn" data-target="login">وارد شوید</button>
+                  </div>
+                </form>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section><!-- /Login Section -->
+
+  
+{% endblock content %}

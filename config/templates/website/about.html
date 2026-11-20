@@ -1,0 +1,252 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_title %}درباره ما{% endblock %}
+{% block meta_description %}با فروشگاه Hydrolalehzar، محصولات و خدمات ما و داستان شکل‌گیری این مجموعه آشنا شوید.{% endblock %}
+{% block body_class %}about-page{% endblock %}
+{% block nav_about %} class="active" aria-current="page"{% endblock %}
+
+{% block content %}
+    <!-- Page Title -->
+    <div class="page-title light-background">
+      <div class="container d-lg-flex justify-content-between align-items-center">
+        <h1 class="mb-2 mb-lg-0">درباره ما</h1>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="{% url 'website:index' %}">صفحه اصلی</a></li>
+            <li class="current">درباره ما</li>
+          </ol>
+        </nav>
+      </div>
+    </div><!-- End Page Title -->
+
+    <!-- About 2 Section -->
+    <section id="about-2" class="about-2 section">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <span class="section-badge"><i class="bi bi-info-circle"></i> درباره ما</span>
+        <div class="row">
+          <div class="col-lg-6">Hydrolalehzar
+            <h2 class="about-title">درباره NREGAL </h2>
+            <p class="about-description">در Hydrolalehzar تلاش می‌کنیم تجربه‌ای ساده و مطمئن از خرید آنلاین فراهم کنیم و محصولات منتخب را با اطلاعات روشن در اختیار شما بگذاریم.</p>
+          </div>
+          <div class="col-lg-6">
+            <p class="about-text">ما با توجه به نیازهای مشتریان، مجموعه‌ای متنوع از کالاها را گردآوری کرده‌ایم تا انتخاب و خرید برای شما آسان‌تر شود.</p>
+            <p class="about-text">تیم ما با تمرکز بر کیفیت محصولات و پشتیبانی مناسب، برای بهبود تجربه خرید شما تلاش می‌کند.</p>
+          </div>
+        </div>
+
+        <div class="row features-boxes gy-4 mt-3">
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="feature-box">
+              <div class="icon-box">
+                <i class="bi bi-bullseye"></i>
+              </div>
+              <h3><a href="#" class="stretched-link">تجربه‌ای بهتر</a></h3>
+              <p>در کنار شما هستیم تا با آسودگی محصول موردنیازتان را انتخاب کنید.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="feature-box">
+              <div class="icon-box">
+                <i class="bi bi-person-check"></i>
+              </div>
+              <h3><a href="#" class="stretched-link">نگاهی به کار ما</a></h3>
+              <p>اعتماد و رضایت مشتریان، راهنمای ما در ارائه خدمات بهتر است.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="400">
+            <div class="feature-box">
+              <div class="icon-box">
+                <i class="bi bi-clipboard-data"></i>
+              </div>
+              <h3><a href="#" class="stretched-link">با ما آشنا شوید</a></h3>
+              <p>ما همواره در تلاشیم محصولات باکیفیت را با تجربه‌ای خوشایند و خدماتی پاسخ‌گو به شما ارائه کنیم.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mt-5">
+          <div class="col-lg-12" data-aos="zoom-in" data-aos-delay="200">
+            <div class="video-box">
+              <img src="{% static 'assets/img/person/person-1.webp' %}" class="img-fluid" alt="تصویر ویدیو">
+              <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8" class="glightbox pulsating-play-btn"></a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section><!-- /About 2 Section -->
+
+    <!-- Stats Section -->
+    <section id="stats" class="stats section light-background">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item">
+              <i class="bi bi-emoji-smile"></i>
+              <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
+              <p><strong>مشتریان راضی</strong> <span>نتایج رضایت‌بخش</span></p>
+            </div>
+          </div><!-- End Stats Item -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item">
+              <i class="bi bi-journal-richtext"></i>
+              <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1" class="purecounter"></span>
+              <p><strong>پروژه‌ها</strong> <span>همراه با تجربه و تخصص</span></p>
+            </div>
+          </div><!-- End Stats Item -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item">
+              <i class="bi bi-headset"></i>
+              <span data-purecounter-start="0" data-purecounter-end="1453" data-purecounter-duration="1" class="purecounter"></span>
+              <p><strong>ساعات پشتیبانی</strong> <span>پشتیبانی در دسترس</span></p>
+            </div>
+          </div><!-- End Stats Item -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item">
+              <i class="bi bi-people"></i>
+              <span data-purecounter-start="0" data-purecounter-end="32" data-purecounter-duration="1" class="purecounter"></span>
+              <p><strong>اعضای پرتلاش تیم</strong> <span>تجربه‌ای ارزشمند</span></p>
+            </div>
+          </div><!-- End Stats Item -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Stats Section -->
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials section">
+
+      <div class="container">
+
+        <div class="testimonial-masonry">
+
+          <div class="testimonial-item" data-aos="fade-up">
+            <div class="testimonial-content">
+              <div class="quote-pattern">
+                <i class="bi bi-quote"></i>
+              </div>
+              <p>با راهکارهای نوآورانه، پاسخ‌گویی به نیازهای بازار را بهبود داده‌ایم.</p>
+              <div class="client-info">
+                <div class="client-image">
+                  <img src="{% static 'assets/img/person/person-7.webp' %}" alt="مشتری">
+                </div>
+                <div class="client-details">
+                  <h3>ریچل بنت</h3>
+                  <span class="position">مدیر راهبرد</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-item highlight" data-aos="fade-up" data-aos-delay="100">
+            <div class="testimonial-content">
+              <div class="quote-pattern">
+                <i class="bi bi-quote"></i>
+              </div>
+              <p>ارائه خدمات متمایز و راهکارهای نوآورانه به رشد کسب‌وکار و افزایش رضایت مشتریان کمک کرده است.</p>
+              <div class="client-info">
+                <div class="client-image">
+                  <img src="{% static 'assets/img/person/person-7.webp' %}" alt="مشتری">
+                </div>
+                <div class="client-details">
+                  <h3>دنیل مورگان</h3>
+                  <span class="position">مدیر ارشد نوآوری</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-item" data-aos="fade-up" data-aos-delay="200">
+            <div class="testimonial-content">
+              <div class="quote-pattern">
+                <i class="bi bi-quote"></i>
+              </div>
+              <p>همکاری راهبردی، زمینه تحول دیجیتال و بهبود فرایندها را فراهم کرده است.</p>
+              <div class="client-info">
+                <div class="client-image">
+                  <img src="{% static 'assets/img/person/person-8.webp' %}" alt="مشتری">
+                </div>
+                <div class="client-details">
+                  <h3>اما تامپسون</h3>
+                  <span class="position">مدیر دیجیتال</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-item" data-aos="fade-up" data-aos-delay="300">
+            <div class="testimonial-content">
+              <div class="quote-pattern">
+                <i class="bi bi-quote"></i>
+              </div>
+              <p>تخصص و تعهد حرفه‌ای، زمان تحویل پروژه‌ها و کیفیت خدمات را بهبود داده است.</p>
+              <div class="client-info">
+                <div class="client-image">
+                  <img src="{% static 'assets/img/person/person-8.webp' %}" alt="مشتری">
+                </div>
+                <div class="client-details">
+                  <h3>کریستوفر لی</h3>
+                  <span class="position">مدیر فنی</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-item highlight" data-aos="fade-up" data-aos-delay="400">
+            <div class="testimonial-content">
+              <div class="quote-pattern">
+                <i class="bi bi-quote"></i>
+              </div>
+              <p>همکاری نزدیک و شناخت صنعت، فرایند توسعه محصول و ارتباط با مشتریان را بهبود داده است.</p>
+              <div class="client-info">
+                <div class="client-image">
+                  <img src="{% static 'assets/img/person/person-9.webp' %}" alt="مشتری">
+                </div>
+                <div class="client-details">
+                  <h3>اولیویا کارتر</h3>
+                  <span class="position">مدیر محصول</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-item" data-aos="fade-up" data-aos-delay="500">
+            <div class="testimonial-content">
+              <div class="quote-pattern">
+                <i class="bi bi-quote"></i>
+              </div>
+              <p>نگاه نوآورانه به تجربه کاربری، تعامل و ماندگاری مشتریان را افزایش داده است.</p>
+              <div class="client-info">
+                <div class="client-image">
+                  <img src="{% static 'assets/img/person/person-1.webp' %}" alt="مشتری">
+                </div>
+                <div class="client-details">
+                  <h3>نیتن بروکس</h3>
+                  <span class="position">مدیر تجربه کاربری</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /Testimonials Section -->
+
+  
+{% endblock content %}
